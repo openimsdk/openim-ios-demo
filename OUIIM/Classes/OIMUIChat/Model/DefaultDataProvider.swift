@@ -33,11 +33,11 @@ final class DefaultDataProvider: DataProvider {
     
     private var startClientMsgID: String?
         
-    private var lastMinSeq: Int = 0
-
     private var reverseStartClientMsgID: String?
-                
-    private var reverseLastMinSeq: Int = 0
+    
+    private var isEnd = false
+    
+    private var reverseIsEnd = false
 
     private var conversation: ConversationInfo!
     
@@ -201,15 +201,19 @@ final class DefaultDataProvider: DataProvider {
     private func getHistoryMessageList(reverse: Bool = false, count: Int = 20, completion: @escaping ([MessageInfo]) -> Void) {
 
         if reverse {
+            guard !reverseIsEnd else {
+                completion([])
+                
+                return
+            }
             IMController.shared.getHistoryMessageListReverse(conversationID: conversation.conversationID,
                                                              startCliendMsgId: reverseStartClientMsgID,
-                                                             count: count) { [weak self] seq, ms in
+                                                             count: count) { [weak self] isEnd, ms in
                 guard let self else {
                     completion([])
                     return
                 }
-                
-                self.reverseLastMinSeq = seq
+                self.reverseIsEnd = isEnd
 
                 if ms.isEmpty {
                     completion([])
@@ -219,17 +223,22 @@ final class DefaultDataProvider: DataProvider {
                 }
             }
         } else {
+            guard !isEnd else {
+                completion([])
+                
+                return
+            }
             IMController.shared.getHistoryMessageList(conversationID: conversation.conversationID,
                                                       conversationType: conversation.conversationType,
                                                       startCliendMsgId: startClientMsgID,
-                                                      count: count) { [weak self] seq, ms in
+                                                      count: count) { [weak self] isEnd, ms in
                 guard let self else {
                     completion([])
                     return
                 }
                 
-                self.lastMinSeq = seq
-
+                self.isEnd = isEnd
+                
                 if ms.isEmpty {
                     completion([])
                 } else {
@@ -249,7 +258,7 @@ final class DefaultDataProvider: DataProvider {
         IMController.shared.connectionRelay.skip(1).subscribe(onNext: { [weak self] value in
             guard value.status == .syncComplete, let self else { return }
             startClientMsgID = nil
-            lastMinSeq = 0
+            isEnd = false
             let count = messageStorage.count < pageSize  ? 4 * pageSize : messageStorage.count
             
             getHistoryMessageList(reverse: false, count: count) { [self] ms in

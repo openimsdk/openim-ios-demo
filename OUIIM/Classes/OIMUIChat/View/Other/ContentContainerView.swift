@@ -11,8 +11,6 @@ final class ContentContainerView<ContentView: UIView>: UIView {
             tapGestureRecognizer.isEnabled = onTap != nil
         }
     }
-
-    private var onTapStatus: (() -> Void)?
     
     private lazy var titleLabel: UILabel = {
         let v = UILabel()
@@ -24,24 +22,8 @@ final class ContentContainerView<ContentView: UIView>: UIView {
         
         return v
     }()
-
-    private lazy var errorButton: UIButton = {
-        let v = UIButton(type: .system)
-        v.setImage(UIImage(systemName: "exclamationmark.circle.fill"), for: .normal)
-        v.tintColor = .red
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.isHidden = true
-        v.addTarget(self, action: #selector(errorButtonAction(_:)), for: .touchUpInside)
-        
-        return v
-    }()
     
-    @objc private func errorButtonAction(_ sender: UIButton) {
-        onTapStatus?()
-        sender.isHiddenSafe = true
-        showStutusIndicator()
-    }
-
+    // Message sending status
     private lazy var statusIndicator: UIActivityIndicatorView = {
         let v = UIActivityIndicatorView(style: .medium)
         v.isHidden = true
@@ -49,9 +31,11 @@ final class ContentContainerView<ContentView: UIView>: UIView {
         
         return v
     }()
-        
+    
+    private let blankView = UIView()
+    
     private lazy var contentStack: UIStackView = {
-        let v = UIStackView(arrangedSubviews: [errorButton, statusIndicator, contentView])
+        let v = UIStackView(arrangedSubviews: [statusIndicator, contentView])
         v.spacing = 8
         v.alignment = .center
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +56,7 @@ final class ContentContainerView<ContentView: UIView>: UIView {
         insetsLayoutMarginsFromSafeArea = false
         
         addSubview(titleLabel)
-
+        // WARNING: If they are added to the stackview, the name will not be fully displayed when the text is very short.
         addSubview(contentStack)
         
         NSLayoutConstraint.activate([
@@ -106,13 +90,16 @@ extension ContentContainerView {
         }
     }
     
-    public func showErrorButton(_ show: Bool = false, onTapStatus: (() -> Void)? = nil) {
-        errorButton.isHiddenSafe = !show
-        self.onTapStatus = onTapStatus
-    }
-    
     func setTitle(title: String?, messageType: MessageType) {
         titleLabel.text = title
         titleLabel.textAlignment = messageType == .outgoing ? .right : .left
+        
+        contentStack.removeArrangedSubview(blankView)
+        
+        if messageType == .outgoing {
+            contentStack.insertArrangedSubview(blankView, at: 0)
+        } else {
+            contentStack.addArrangedSubview(blankView)
+        }
     }
 }

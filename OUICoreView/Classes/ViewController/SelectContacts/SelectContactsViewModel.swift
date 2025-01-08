@@ -3,7 +3,7 @@ import OUICore
 import RxRelay
 import RxSwift
 #if ENABLE_ORGANIZATION
-import OUIOrganization // 组织架构不对外开放，这里只有特殊处理下
+import OUIOrganization 
 #endif
 
 class SelectContactsViewModel {    
@@ -71,7 +71,7 @@ class SelectContactsViewModel {
             guard let self else { return }
             self.contacts = g.map{ContactInfo(ID: $0.groupID, name: $0.groupName, faceURL: $0.faceURL, type: .group)}
             self.groups.append(contentsOf: self.contacts)
-            if self.tabSelected.value == .undefine { // 好友+群组+组织架构，不要刷新界面
+            if self.tabSelected.value == .undefine { 
                 self.divideContactsInSection(self.contacts)
             }
         }

@@ -27,9 +27,9 @@ open class SelectContactsViewController: UIViewController {
 
     private var selectedHandler: SelectedContactsHandler?
     private var contacTypes: [ContactType] = []
-    private var sourceID: String? // 可能是群ID，可能是部门ID
-    private var hasSelectedItems: [ContactInfo] = [] // 上一次已经选择过的ID
-    private var blockedIDs: [String] = [] // 不能选择的ID
+    private var sourceID: String? 
+    private var hasSelectedItems: [ContactInfo] = [] 
+    private var blockedIDs: [String] = [] 
     private var allowsMultipleSelection = true
     private var enableChangeSelectedModel = false
     

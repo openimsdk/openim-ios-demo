@@ -21,7 +21,6 @@ target 'OpenIMSDKUIKit_Example' do
   pod 'Lantern', :git => 'https://github.com/std-s/Lantern.git'
   pod 'MMBAlertsPickers'
   pod 'SGCodeTextField'
-#  pod 'JXPatternLock'
   pod 'JXSegmentedView'
     
   pod 'Firebase/Core'

@@ -11,8 +11,8 @@ enum FileDownloadStatus {
 
 final class FileController: CellBaseController {
     
-    var image = UIImage(nameInBundle: "chat_msg_file_zip_disable_icon") // 未下载完成的图
-    var highlightedImage = UIImage(nameInBundle: "chat_msg_file_zip_normal_icon")// 完成下载的图
+    var image = UIImage(nameInBundle: "chat_msg_file_zip_disable_icon") 
+    var highlightedImage = UIImage(nameInBundle: "chat_msg_file_zip_normal_icon")
     
     var name: String?
     var displayName: String?

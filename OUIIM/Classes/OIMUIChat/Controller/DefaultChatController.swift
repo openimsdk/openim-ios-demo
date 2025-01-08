@@ -20,21 +20,21 @@ final class DefaultChatController: ChatController {
     
     private var lasReceiptInfos: [ReceiptInfo]?
     
-    private var groupReadedInfos: [GroupMessageReadInfo]? // 群组中已读人
+    private var groupReadedInfos: [GroupMessageReadInfo]? 
     
-    private var unReadCount: Int = 0 // 左上角的未读数
+    private var unReadCount: Int = 0 
     
     private var lastReceivedString: String?
     
-    private let receiverId: String // 接收人的uid
+    private let receiverId: String 
     
-    private let senderID: String // 发送人的uid
+    private let senderID: String 
     
-    private let conversationType: ConversationType // 会话类型
+    private let conversationType: ConversationType 
     
     private var conversation: ConversationInfo
     
-    private var groupInfo: GroupInfo? // 将其缓存
+    private var groupInfo: GroupInfo? 
     
     private var groupMembers: [GroupMemberInfo]?
     
@@ -44,9 +44,9 @@ final class DefaultChatController: ChatController {
     
     private var messages: [MessageInfo] = []
     
-    private var selecteMessages: [MessageInfo] = [] // 选中的消息id， 可转发、删除、引用消息
+    private var selecteMessages: [MessageInfo] = [] 
 
-    private var selectedUsers: [String] = [] // 选中的成员, 可做为@成员
+    private var selectedUsers: [String] = [] 
     
     private var isAdminOrOwner = false
     
@@ -932,8 +932,8 @@ final class DefaultChatController: ChatController {
     }
 
     private func createCellsFromGroupedMessages(_ groupedMessages: [[Message]]) -> [Cell] {
-        let cells = groupedMessages.enumerated().map { index, messages -> [Cell] in // 按天划分
-            var cells: [Cell] = Array(messages.enumerated().map { index, message -> [Cell] in // 按发送者划分
+        let cells = groupedMessages.enumerated().map { index, messages -> [Cell] in 
+            var cells: [Cell] = Array(messages.enumerated().map { index, message -> [Cell] in 
                 
                 if message.contentType == .system, case .attributeText(let value) = message.data {
                     
@@ -1491,7 +1491,7 @@ extension DefaultChatController: EditingAccessoryControllerDelegate {
             messages.first(where: { $0.clientMsgID == id})?.isSelected = false
         } else {
             if let item = messages.first(where: { $0.clientMsgID == id}) {
-                item.isSelected = true // 多选的时候用来记录选中项，主要是cell重用问题。
+                item.isSelected = true 
                 selecteMessages.append(item)
             }
         }

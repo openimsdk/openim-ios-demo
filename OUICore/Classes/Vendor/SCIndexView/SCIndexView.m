@@ -260,7 +260,7 @@ static inline NSInteger SCPositionOfTextLayerInY(CGFloat y, CGFloat margin, CGFl
         self.tableView.panGestureRecognizer.enabled = NO;
         self.tableView.panGestureRecognizer.enabled = YES;
         
-        return; // 当滑动索引视图时，tableView滚动不能影响索引位置
+        return; 
     }
     
     [self configCurrentSection];

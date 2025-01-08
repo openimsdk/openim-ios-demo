@@ -147,37 +147,37 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
-  - "OpenIMSDK (3.8.2+1)":
+  - OpenIMSDK (3.8.3):
     - MJExtension
-    - "OpenIMSDK/Callbacker (= 3.8.2+1)"
-    - "OpenIMSDK/CallbackProxy (= 3.8.2+1)"
-    - "OpenIMSDK/Interface (= 3.8.2+1)"
-    - "OpenIMSDK/Model (= 3.8.2+1)"
-    - "OpenIMSDK/Utils (= 3.8.2+1)"
-    - OpenIMSDKCore (= 3.8.2)
-  - "OpenIMSDK/Callbacker (3.8.2+1)":
+    - OpenIMSDK/Callbacker (= 3.8.3)
+    - OpenIMSDK/CallbackProxy (= 3.8.3)
+    - OpenIMSDK/Interface (= 3.8.3)
+    - OpenIMSDK/Model (= 3.8.3)
+    - OpenIMSDK/Utils (= 3.8.3)
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDK/Callbacker (3.8.3):
     - MJExtension
     - OpenIMSDK/Model
     - OpenIMSDK/Utils
-    - OpenIMSDKCore (= 3.8.2)
-  - "OpenIMSDK/CallbackProxy (3.8.2+1)":
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDK/CallbackProxy (3.8.3):
     - MJExtension
     - OpenIMSDK/Utils
-    - OpenIMSDKCore (= 3.8.2)
-  - "OpenIMSDK/Interface (3.8.2+1)":
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDK/Interface (3.8.3):
     - MJExtension
     - OpenIMSDK/Callbacker
     - OpenIMSDK/CallbackProxy
     - OpenIMSDK/Model
-    - OpenIMSDKCore (= 3.8.2)
-  - "OpenIMSDK/Model (3.8.2+1)":
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDK/Model (3.8.3):
     - MJExtension
     - OpenIMSDK/Utils
-    - OpenIMSDKCore (= 3.8.2)
-  - "OpenIMSDK/Utils (3.8.2+1)":
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDK/Utils (3.8.3):
     - MJExtension
-    - OpenIMSDKCore (= 3.8.2)
-  - OpenIMSDKCore (3.8.2)
+    - OpenIMSDKCore (= 3.8.3)
+  - OpenIMSDKCore (3.8.3)
   - OUICalling (0.0.1):
     - Kingfisher
     - LiveKitClient
@@ -194,7 +194,7 @@ PODS:
     - KTVHTTPCache (= 3.0.2)
     - Localize-Swift (~> 3.2)
     - lottie-ios (~> 3.0)
-    - OpenIMSDK
+    - OpenIMSDK (= 3.8.3)
     - ProgressHUD
     - RxCocoa (~> 6.0)
     - RxDataSources
@@ -258,7 +258,7 @@ PODS:
   - ZLPhotoBrowser (4.4.8.2):
     - ZLPhotoBrowser/Core (= 4.4.8.2)
   - ZLPhotoBrowser/Core (4.4.8.2)
-  - ZXSDK-Noidfa (3.3.1)
+  - ZXSDK-Noidfa (3.3.2)
 
 DEPENDENCIES:
   - AlamofireNetworkActivityLogger (from `../3rd`)
@@ -389,10 +389,10 @@ SPEC CHECKSUMS:
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MMBAlertsPickers: d52d288114c7dad4e4f1282fb2b1f1189ccc117a
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
-  OpenIMSDK: 242d73b44c10ddcc789b7c8016c7fe135234061a
-  OpenIMSDKCore: aaffd63079a874d9272b8b962598723cb8128d32
+  OpenIMSDK: 30ceef7c65f28c8aa0673eb5019cde9c520ea165
+  OpenIMSDKCore: 6fba8ae1b25e33e2d5cfb16f4eab934f3d7c5ee8
   OUICalling: 958bc625d668f44c79b5ad1264f5f2ae11a82c48
-  OUICore: 2a7c0f4358739fa5d01644d997542c8435fc8206
+  OUICore: 6625d5613d42f398e9cfe43896abcb7caa8a769b
   OUICoreView: 6b0a7c78cf64dcbe5081e35d062fea503932eb06
   OUIIM: 8b2f7aa93be5a0365e906337ff96ab7e20376955
   ProgressHUD: b736f0c6de97f37f64e847f80689c23a14026adf
@@ -409,8 +409,8 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFPlayer: 5cf39e8d9f0c2394a014b0db4767b5b5a6bffe13
   ZLPhotoBrowser: cd023607d05a72d27a3ae57f50dbf86910713a2c
-  ZXSDK-Noidfa: f3cc8e4b6b4775df301489ae0792b727e193e7d3
+  ZXSDK-Noidfa: d7b8b6efa9220851ac5a32699344243feaaccbc1
 
-PODFILE CHECKSUM: 80c70ad5d0c4c659f77deb233a2ec852af7112dc
+PODFILE CHECKSUM: 6237ce52dbbf5214ea449ac6dd357a3f123865ce
 
 COCOAPODS: 1.15.2

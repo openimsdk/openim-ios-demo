@@ -8,22 +8,22 @@ import ProgressHUD
 
 enum CallingState: String {
     case normal = "normal"
-    case call = "call" // 主动邀请
-    case beCalled = "beCalled" // 被邀请
-    case reject = "reject" // 拒绝
-    case beRejected = "beRejected" // 被拒绝
-    case calling = "calling" // 通话中
-    case beAccepted = "beAccepted" // 已接受
-    case hangup = "hangup" // 主动挂断
-    case beHangup = "beHangup"// 被对方挂断
+    case call = "call" 
+    case beCalled = "beCalled" 
+    case reject = "reject" 
+    case beRejected = "beRejected" 
+    case calling = "calling" 
+    case beAccepted = "beAccepted" 
+    case hangup = "hangup" 
+    case beHangup = "beHangup"
     case connecting = "connecting"
     case disConnect = "disConnect"
     case connectFailure = "connectFailure"
-    case noReply = "noReply"// 无响应
-    case cancel = "cancel" // 主动取消
-    case beCanceled = "beCanceled" // 被取消
-    case timeout = "timeout" //超时
-    case join = "join" //主动加入（群通话）
+    case noReply = "noReply"
+    case cancel = "cancel" 
+    case beCanceled = "beCanceled" 
+    case timeout = "timeout" 
+    case join = "join" 
     case accessByOther = "accessByOther"
     case rejectedByOther = "rejectedByOther"
 }
@@ -36,11 +36,11 @@ public class CallingManager: NSObject {
     private let disposeBag = DisposeBag()
     private var signalingInfo: OIMSignalingInfo?
     
-    private var senderViewController: CallingSenderController? // 发起人
-    private var reciverViewController: CallingReceiverController? // 接收人
-    private var inviter: CallingUserInfo? // 邀请者
-    private var others: [CallingUserInfo]?// 被邀请者
-    private var isPresented: Bool = false // 是否弹出界面
+    private var senderViewController: CallingSenderController? 
+    private var reciverViewController: CallingReceiverController? 
+    private var inviter: CallingUserInfo? 
+    private var others: [CallingUserInfo]?
+    private var isPresented: Bool = false 
     private var liveURL: String?
     private var token: String?
     private var countdownTimer: CountdownTimer?

@@ -11,7 +11,7 @@ static inline UIColor *SCGetColor(CGFloat red, CGFloat green, CGFloat blue, CGFl
 
 @interface SCIndexViewConfiguration ()
 
-@property (nonatomic, assign) SCIndexViewStyle indexViewStyle;  // 索引元素之间间隔距离
+@property (nonatomic, assign) SCIndexViewStyle indexViewStyle;  
 
 @end
 

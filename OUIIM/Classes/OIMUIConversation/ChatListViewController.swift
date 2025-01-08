@@ -285,7 +285,7 @@ open class ChatListViewController: UIViewController, UITableViewDelegate {
             cell.unreadLabel.isHidden = unreadShouldHide
             cell.unreadLabel.text =  item.unreadCount > 99 ? "99+" : "\(item.unreadCount)"
             cell.muteImageView.isHidden = item.recvMsgOpt == .receive
-            cell.timeLabel.text = MessageHelper.convertList(timestamp_ms: item.latestMsgSendTime)
+            cell.timeLabel.text = Date.timeString(timeInterval: TimeInterval(item.latestMsgSendTime))
             
         }.disposed(by: _disposeBag)
 

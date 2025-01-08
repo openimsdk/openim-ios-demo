@@ -46,13 +46,13 @@ public class CallingBaseViewController: CallingBaseController {
         return v
     }()
     internal var minimizeButton: UIButton = .init()
-    internal var linkedTimer: Timer? // 通话时间
+    internal var linkedTimer: Timer? 
     
     private var audioPlayer: AVAudioPlayer?
     
     internal var poorNetwork = false 
     
-    public var linkingDuration: Int = 0 // 通话时长
+    public var linkingDuration: Int = 0 
     
     /**
      链接房间

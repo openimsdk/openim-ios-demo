@@ -38,9 +38,9 @@ public enum ConnectionStatus: Int {
 }
 
 public enum SDKError: Int {
-    case blockedByFriend = 1302 // 被对方拉黑
-    case deletedByFriend = 1303 // 被对方删除
-    case refuseToAddFriends = 10007 // 该用户已设置不可添加
+    case blockedByFriend = 1302 
+    case deletedByFriend = 1303 
+    case refuseToAddFriends = 10007 
 }
 
 public enum CustomMessageType: Int {
@@ -258,12 +258,12 @@ public class IMController: NSObject {
     }
     
     public typealias MessagesCallBack = ([MessageInfo]) -> Void
-    public typealias SeqMessagesCallBack = (Int, [MessageInfo]) -> Void
+    public typealias SeqMessagesCallBack = (Bool, [MessageInfo]) -> Void
 
     public var chatingConversationID: String = ""
 
     func ringAndVibrate() {
-        if NSDate().timeIntervalSince1970 - remindTimeStamp >= 1 { // 响铃间隔1秒钟
+        if NSDate().timeIntervalSince1970 - remindTimeStamp >= 1 { 
 
 
             if enableRing {
@@ -780,39 +780,37 @@ extension IMController {
     }
     
     public func getHistoryMessageList(conversationID: String,
-                                          conversationType: ConversationType = .c2c,
-                                          startCliendMsgId: String?,
-                                          lastMinSeq: Int = 0,
-                                          count: Int = 50,
-                                          completion: @escaping SeqMessagesCallBack) {
-            
-            let opts = OIMGetAdvancedHistoryMessageListParam()
-            opts.conversationID = conversationID
-            opts.lastMinSeq = lastMinSeq
-            opts.startClientMsgID = startCliendMsgId
-            opts.count = count
-            
-            Self.shared.imManager.getAdvancedHistoryMessageList(opts) { msgListInfo in
-                let arr = msgListInfo?.messageList.compactMap({ $0.toMessageInfo() }) ?? []
-                completion(msgListInfo?.lastMinSeq ?? 0, arr)
-            }
+                                      conversationType: ConversationType = .c2c,
+                                      startCliendMsgId: String?,
+                                      count: Int = 50,
+                                      completion: @escaping SeqMessagesCallBack) {
+        
+        let opts = OIMGetAdvancedHistoryMessageListParam()
+        opts.conversationID = conversationID
+        opts.viewType = .history
+        opts.startClientMsgID = startCliendMsgId
+        opts.count = count
+        
+        Self.shared.imManager.getAdvancedHistoryMessageList(opts) { msgListInfo in
+            let arr = msgListInfo?.messageList.compactMap({ $0.toMessageInfo() }) ?? []
+            completion(msgListInfo?.isEnd ?? true, arr)
         }
+    }
     
     public func getHistoryMessageListReverse(conversationID: String,
                                              conversationType: ConversationType = .c2c,
                                              startCliendMsgId: String?,
-                                             lastMinSeq: Int = 0,
                                              count: Int = 50,
                                              completion: @escaping SeqMessagesCallBack) {
         let opts = OIMGetAdvancedHistoryMessageListParam()
         opts.conversationID = conversationID
-        opts.lastMinSeq = lastMinSeq
+        opts.viewType = .history
         opts.startClientMsgID = startCliendMsgId
         opts.count = count
         
         Self.shared.imManager.getAdvancedHistoryMessageListReverse(opts) { msgListInfo in
             let arr = msgListInfo?.messageList.compactMap({ $0.toMessageInfo() }) ?? []
-            completion(msgListInfo?.lastMinSeq ?? 0, arr)
+            completion(msgListInfo?.isEnd ?? true, arr)
         } onFailure: { code, msg in
             print("getHistoryMessageListReverse error: \(code), \(msg)")
         }
@@ -888,8 +886,8 @@ extension IMController {
         
         if let desc = model.offlinePushInfo.desc, desc.isEmpty {
             let push = OfflinePushInfo()
-            push.title = "你收到了一条消息"
-            push.desc = "你收到了一条消息"
+            push.title = "You received a message"
+            push.desc = "You received a message"
             message.offlinePush = push.toOIMOfflinePushInfo()
         }
         
@@ -1062,7 +1060,7 @@ extension IMController {
     }
     
     public func sendMergeMessage(messages: [MessageInfo],
-                                 title: String, // let title = conversationType != .c2c ? "群聊的聊天记录" : "\(conversation.showName!)与\(currentUserRelay.value!.nickname!)的聊天记录"
+                                 title: String, 
                                  to recvID: String,
                                  conversationType: ConversationType,
                                  sending: CallBack.MessageReturnVoid,
@@ -1637,7 +1635,7 @@ public class UserInfo: Codable {
     public var birth: Int?
     public var email: String?
     public var createTime: Int = 0
-    public var landline: String? // 座机
+    public var landline: String? 
     public var ex: String?
     public var globalRecvMsgOpt: ReceiveMessageOpt = .receive
 
@@ -1842,7 +1840,7 @@ open class MessageInfo: Codable {
     public var content: String?
 
     var seq: Int = 0
-    public var isRead: Bool = false // 标记收到的消息，是否已经标记已读 & 标记发出的消息，是否已经标记已读
+    public var isRead: Bool = false 
     public var status: MessageStatus = .undefine
     public var attachedInfo: String?
     public var ex: String?
@@ -1867,7 +1865,7 @@ open class MessageInfo: Codable {
 
     public var isPlaying = false
     public var isSelected = false
-    public var isAnchor = false // 搜索聊天记录的消息
+    public var isAnchor = false 
     
     public func isCalling() -> Bool {
         if let data = customElem?.data {
@@ -2115,15 +2113,15 @@ public enum GroupStatus: Int, Codable {
 }
 
 public enum JoinSource: Int, Codable {
-    case invited = 2 /// 通过邀请
-    case search = 3 /// 通过搜索
-    case QRCode = 4 /// 通过二维码
+    case invited = 2 
+    case search = 3 
+    case QRCode = 4 
 }
 
 public enum GroupVerificationType: Int, Codable {
-    case applyNeedVerificationInviteDirectly = 0 /// 申请需要同意 邀请直接进
-    case allNeedVerification = 1 /// 所有人进群需要验证，除了群主管理员邀
-    case directly = 2 /// 直接进群
+    case applyNeedVerificationInviteDirectly = 0 
+    case allNeedVerification = 1 
+    case directly = 2 
     
 }
 

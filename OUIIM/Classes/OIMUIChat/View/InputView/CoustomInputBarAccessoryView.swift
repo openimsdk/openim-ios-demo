@@ -152,8 +152,8 @@ class CoustomInputBarAccessoryView: InputBarAccessoryView {
         uti == "public.heic"
     }
     
-    let audioMaxDuration = 60 // 允许的最大长度
-    var audioDuration = 0 // 录制长度
+    let audioMaxDuration = 60 
+    var audioDuration = 0 
     var audioRecordTimer: Timer?
     
     lazy var audioButton: InputBarButtonItem = {

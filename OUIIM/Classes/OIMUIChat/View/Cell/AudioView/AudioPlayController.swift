@@ -5,10 +5,10 @@ import AVFAudio
 class AudioPlayController: NSObject {
     
     public static let shared = AudioPlayController()
-    public var didFinishPlaying: ((String) -> Void)? // 更新UI界面
+    public var didFinishPlaying: ((String) -> Void)? 
     
-    private var playingMessageID: String? // 正在播放的消息id
-    private var messageID: String? // 点击的消息id
+    private var playingMessageID: String? 
+    private var messageID: String? 
     private var audioPlayer: AVAudioPlayer?
     private var pauseMessageID: String?
 

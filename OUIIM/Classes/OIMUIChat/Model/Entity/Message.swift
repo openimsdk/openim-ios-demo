@@ -207,8 +207,8 @@ struct LocationMessageSource: Hashable {
     var address: String?
     
     var desc: String = ""
-    var latitude: Double = 0 // 纬度
-    var longitude: Double = 0 // 经度
+    var latitude: Double = 0 
+    var longitude: Double = 0 
 }
 
 struct FaceMessageSource: Hashable {
@@ -261,13 +261,13 @@ struct NoticeMessageSource: Hashable {
 
 struct CustomMessageSource: Hashable {
     public enum CustomMessageType: Int {
-        case call = 901 // 音视频
+        case call = 901 
         case customEmoji = 902 // emoji
-        case tagMessage = 903 // 标签消息
-        case moments = 904 // 朋友圈
-        case meeting = 905 // 会议
-        case blockedByFriend = 910 // 被拉黑
-        case deletedByFriend = 911 // 被删除
+        case tagMessage = 903 
+        case moments = 904 
+        case meeting = 905 
+        case blockedByFriend = 910 
+        case deletedByFriend = 911 
     }
 
     var data: String?
@@ -308,11 +308,11 @@ struct Message: Hashable {
         
         case image(MediaMessageSource, isLocallyStored: Bool)
         
-        case video(MediaMessageSource, isLocallyStored: Bool) // 视频路径，缩略图路径，时长
+        case video(MediaMessageSource, isLocallyStored: Bool) 
         
         case audio(MediaMessageSource, isLocallyStored: Bool)
         
-        case file(FileMessageSource, isLocallyStored: Bool) // 文件路径， 名字， 长度
+        case file(FileMessageSource, isLocallyStored: Bool) 
         
         case card(CardMessageSource)
         
@@ -343,7 +343,7 @@ struct Message: Hashable {
     
     var status: MessageStatus = .sending
     
-    var isSelected: Bool = false // 编辑状态使用
+    var isSelected: Bool = false 
     
     var isAnchor: Bool = false
 }

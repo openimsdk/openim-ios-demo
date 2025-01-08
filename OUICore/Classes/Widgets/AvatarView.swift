@@ -126,7 +126,7 @@ public class AvatarView: UIView {
         self.onLongPress = onLongPress
         
         if let url = url, !url.isEmpty {
-            if indexAvatarList.contains(url) {// 默认的图
+            if indexAvatarList.contains(url) {
                 avatarImageView.image = .init(nameInBundle: url)
             } else {
 

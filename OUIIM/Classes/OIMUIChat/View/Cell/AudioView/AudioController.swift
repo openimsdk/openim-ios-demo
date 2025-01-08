@@ -26,7 +26,7 @@ class AudioController: CellBaseController {
     }
     
     deinit {
-        AudioPlayController.shared.reset() // 正在播放的时候，返回
+        AudioPlayController.shared.reset() 
     }
     
     func action() {

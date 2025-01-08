@@ -322,9 +322,9 @@
         return [self.landScapeControlView shouldResponseGestureWithPoint:point withGestureType:gestureType touch:touch];
     } else {
         if (!self.customDisablePanMovingDirection) {
-            if (self.player.scrollView) {  /// 列表时候禁止上下滑动（防止和列表滑动冲突）
+            if (self.player.scrollView) {  
                 self.player.disablePanMovingDirection = ZFPlayerDisablePanMovingDirectionVertical;
-            } else { /// 不禁用滑动方向
+            } else { 
                 self.player.disablePanMovingDirection = ZFPlayerDisablePanMovingDirectionNone;
             }
         }
@@ -374,10 +374,10 @@
         if (velocity.x == 0) return;
         [self sliderValueChangingValue:self.sumTime/totalMovieDuration isForward:style];
     } else if (direction == ZFPanDirectionV) {
-        if (location == ZFPanLocationLeft) { /// 调节亮度
+        if (location == ZFPanLocationLeft) { 
             self.player.brightness -= (velocity.y) / 10000;
             [self.volumeBrightnessView updateProgress:self.player.brightness withVolumeBrightnessType:ZFVolumeBrightnessTypeumeBrightness];
-        } else if (location == ZFPanLocationRight) { /// 调节声音
+        } else if (location == ZFPanLocationRight) { 
             self.player.volume -= (velocity.y) / 10000;
             if (self.player.isFullScreen) {
                 [self.volumeBrightnessView updateProgress:self.player.volume withVolumeBrightnessType:ZFVolumeBrightnessTypeVolume];

@@ -225,29 +225,29 @@
     
     UIColor *batteryColor;
     UIDeviceBatteryState batteryState = [UIDevice currentDevice].batteryState;
-    if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { /// 在充电
+    if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { 
         self.batteryImageView.hidden = NO;
     } else {
         self.batteryImageView.hidden = YES;
     }
     if (@available(iOS 9.0, *)) {
-        if ([NSProcessInfo processInfo].lowPowerModeEnabled) { /// 低电量模式
+        if ([NSProcessInfo processInfo].lowPowerModeEnabled) { 
             batteryColor = UIColorFromHex(0xF9CF0E);
         } else {
-            if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { /// 在充电
+            if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { 
                 batteryColor = UIColorFromHex(0x37CB46);
-            } else if (batteryLevel <= 0.2) { /// 电量低
+            } else if (batteryLevel <= 0.2) { 
                 batteryColor = UIColorFromHex(0xF02C2D);
-            } else { /// 电量正常 白色
+            } else { 
                 batteryColor = [UIColor whiteColor];
             }
         }
     } else {
-        if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { /// 在充电
+        if (batteryState == UIDeviceBatteryStateCharging || batteryState == UIDeviceBatteryStateFull) { 
             batteryColor = UIColorFromHex(0x37CB46);
-        } else if (batteryLevel <= 0.2) { /// 电量低
+        } else if (batteryLevel <= 0.2) { 
             batteryColor = UIColorFromHex(0xF02C2D);
-        } else { /// 电量正常 白色
+        } else { 
             batteryColor = [UIColor whiteColor];
         }
     }

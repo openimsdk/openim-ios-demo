@@ -337,7 +337,7 @@ extension UserDetailTableViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard hasViewAppeared, buttonStack != nil, scrollView.contentSize.height + (navigationController?.navigationBar.frame.maxY ?? 64) > buttonStack!.frame.minY else { return }
         
-        if scrollView.contentOffset.y > offsetY, scrollView.contentOffset.y > 0 {//向上滑动
+        if scrollView.contentOffset.y > offsetY, scrollView.contentOffset.y > 0 {
 
             UIView.animate(withDuration: 0.2) { [self] in
                 buttonStack!.alpha = 0
@@ -345,7 +345,7 @@ extension UserDetailTableViewController: UIScrollViewDelegate {
                 buttonStack!.isHidden = true
             }
             
-        } else if scrollView.contentOffset.y < offsetY, !scrollView.isDecelerating {//向下滑动
+        } else if scrollView.contentOffset.y < offsetY, !scrollView.isDecelerating {
 
             UIView.animate(withDuration: 0.2) { [self] in
                 buttonStack!.alpha = 1
@@ -353,7 +353,7 @@ extension UserDetailTableViewController: UIScrollViewDelegate {
                 buttonStack!.isHidden = false
             }
         }
-        offsetY = scrollView.contentOffset.y;//将当前位移变成缓存位移
+        offsetY = scrollView.contentOffset.y;
     }
 }
 

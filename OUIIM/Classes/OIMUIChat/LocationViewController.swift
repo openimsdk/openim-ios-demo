@@ -140,7 +140,7 @@ class LocationViewController: UIViewController, WKScriptMessageHandler {
 extension LocationViewController : WKUIDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let request = navigationAction.request
-        let url = navigationAction.request.url?.absoluteString // 点击去这里，拦截这个事件，qqmap://map/routeplan
+        let url = navigationAction.request.url?.absoluteString 
         let hostname = request.url?.host?.lowercased();
         
         print("===url:\(url)")

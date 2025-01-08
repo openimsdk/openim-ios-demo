@@ -730,14 +730,10 @@ final class DefaultChatCollectionDataSource: NSObject, ChatCollectionDataSource 
     
         cellView.contentContainer.setTitle(title: sessionType == .oaNotice ? user.name : "\(sessionType == .single ? "" : user.name) \(Date.timeString(date: date))", messageType: alignment.isIncoming ? .incoming : .outgoing)
         cellView.contentContainer.showStutusIndicator(false)
-        cellView.contentContainer.showErrorButton(false)
         
         switch status {
         case .sentFailure:
             cellView.contentContainer.showStutusIndicator(false)
-            cellView.contentContainer.showErrorButton(true) { [weak self] in
-                self?.reloadDelegate.resendMessage(messageID: messageID)
-            }
         case .sending:
                 cellView.contentContainer.showStutusIndicator()
         case .received:

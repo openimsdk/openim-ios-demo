@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0825D8793200FFE50BD37C /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87EC9EA65FE1A9C9608B6B2 /* Pods_OpenIMSDKUIKit_Example.framework */; };
 		170A2B3928F29C5000CA68EA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A2B3828F29C5000CA68EA /* NotificationService.swift */; };
 		170A2B3D28F29C5000CA68EA /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 170A2B3628F29C5000CA68EA /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		170E4B2329344C5D007A6535 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E4B2229344C5D007A6535 /* DiscoveryViewController.swift */; };
@@ -46,7 +47,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		C84FD85A57A397850753E8A2 /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AD5A64F4306C1C30045AD8 /* Pods_OpenIMSDKUIKit_Example.framework */; };
 		DC0B7DF2282DFA09003896C1 /* UnderlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B7DF1282DFA09003896C1 /* UnderlineButton.swift */; };
 		DC0B7DF6282DFA85003896C1 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B7DF5282DFA85003896C1 /* DemoUI.swift */; };
 		DCE04171283E5BD30095874E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCE04173283E5BD30095874E /* Localizable.strings */; };
@@ -77,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06BF1512AD96FB28D6A0A5EF /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		170A2B3628F29C5000CA68EA /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		170A2B3828F29C5000CA68EA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		170A2B3A28F29C5000CA68EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,14 +120,13 @@
 		17E8E3452CC5F6220016CDD4 /* InputPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		17E8E3462CC5F6220016CDD4 /* InputAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAccountViewController.swift; sourceTree = "<group>"; };
 		17FD41112B66559B008F1485 /* LocalAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalAuthManager.swift; sourceTree = "<group>"; };
-		198A75382DD22F11EDC594AB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* N-DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "N-DEMO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		72AD5A64F4306C1C30045AD8 /* Pods_OpenIMSDKUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenIMSDKUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87EC9EA65FE1A9C9608B6B2 /* Pods_OpenIMSDKUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenIMSDKUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC05D4CF283E153400CC3974 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC05D4D0283E156300CC3974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		DC05D4D1283E156300CC3974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		DCD9C9762849145C00487806 /* OpenIMSDKUIKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenIMSDKUIKit_Example.entitlements; sourceTree = "<group>"; };
 		DCE04172283E5BD30095874E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DCE04174283E5BD70095874E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E9068826DF844A734643A758 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DD4AFC1C1395736C20D133BB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EED869B95C353B3B8D5FE5BE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84FD85A57A397850753E8A2 /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */,
+				0A0825D8793200FFE50BD37C /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +315,7 @@
 				175D46672B307ABD006DE918 /* libresolv.tbd */,
 				DC1FAF0F27FF04D000B529B9 /* OpenIMSDKUIKit.framework */,
 				17B485F529C082CA002571B8 /* ReplayKit.framework */,
-				72AD5A64F4306C1C30045AD8 /* Pods_OpenIMSDKUIKit_Example.framework */,
+				C87EC9EA65FE1A9C9608B6B2 /* Pods_OpenIMSDKUIKit_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -323,8 +323,8 @@
 		CAC64E6711B5A6903B4FCC8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				198A75382DD22F11EDC594AB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */,
-				E9068826DF844A734643A758 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */,
+				DD4AFC1C1395736C20D133BB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */,
+				06BF1512AD96FB28D6A0A5EF /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -393,14 +393,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OpenIMSDKUIKit_Example" */;
 			buildPhases = (
-				3D8459E1E8ACC0C2D91C1108 /* [CP] Check Pods Manifest.lock */,
+				08F57A099C9C30EA7B29E91B /* [CP] Check Pods Manifest.lock */,
 				DCBD4C0227F07EE7003AFE6A /* Run Lint */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				170A2B3E28F29C5000CA68EA /* Embed App Extensions */,
-				78F350E93722E55220136F34 /* [CP] Embed Pods Frameworks */,
-				2DCF471A284FC28DB0A90B52 /* [CP] Copy Pods Resources */,
+				3553662C6F7E4FF42FF9B22C /* [CP] Embed Pods Frameworks */,
+				9D1FB4C53101946DC84671DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,31 +480,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2DCF471A284FC28DB0A90B52 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICalling/OIMUICalling.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIResource.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIEmoji.bundle",
-				"${PODS_ROOT}/../../3rd/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUICalling.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIEmoji.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D8459E1E8ACC0C2D91C1108 /* [CP] Check Pods Manifest.lock */ = {
+		08F57A099C9C30EA7B29E91B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,7 +502,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78F350E93722E55220136F34 /* [CP] Embed Pods Frameworks */ = {
+		3553662C6F7E4FF42FF9B22C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,6 +596,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D1FB4C53101946DC84671DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICalling/OIMUICalling.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIResource.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIEmoji.bundle",
+				"${PODS_ROOT}/../../3rd/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUICalling.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIEmoji.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCBD4C0227F07EE7003AFE6A /* Run Lint */ = {
@@ -914,7 +914,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 198A75382DD22F11EDC594AB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */;
+			baseConfigurationReference = DD4AFC1C1395736C20D133BB /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -954,7 +954,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9068826DF844A734643A758 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */;
+			baseConfigurationReference = 06BF1512AD96FB28D6A0A5EF /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;

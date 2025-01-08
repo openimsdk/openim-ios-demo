@@ -7,7 +7,7 @@ public enum ColorConfig {
     case rgb565
     case argb8888
     case rgbaF16
-    case unknown // 其余色彩配置
+    case unknown 
 }
 
 public class ImageCompress {

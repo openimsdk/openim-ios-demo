@@ -326,7 +326,7 @@
     if (CGRectContainsPoint(sliderRect, point)) {
         return NO;
     }
-    if (self.player.isLockedScreen && type != ZFPlayerGestureTypeSingleTap) { // 锁定屏幕方向后只相应tap手势
+    if (self.player.isLockedScreen && type != ZFPlayerGestureTypeSingleTap) { 
         return NO;
     }
     return YES;
