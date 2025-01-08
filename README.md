@@ -59,8 +59,8 @@ Follow the steps below to set up your local development environment:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/openimsdk/open-im-ios-demo.git
-   cd open-im-ios-demo/Example
+   git clone https://github.com/openimsdk/openim-ios-demo.git
+   cd openim-ios-demo/Example
    ```
 
 2. Install dependencies
@@ -68,7 +68,7 @@ Follow the steps below to set up your local development environment:
    ```bash
    pod install
    ```
-   2.1 If the installation fails, execute the following command to update the local CocoaPods warehouse list.
+   2.1 If the installation fails and a message appears saying that a dependency was not found, please execute the following command to update the local CocoaPods repository list.
    ```bash
    pod repo update
    ```

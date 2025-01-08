@@ -58,8 +58,8 @@ OpenIM 为开发者提供开源即时通讯 SDK，作为 Twilio、Sendbird 等�
 1. 拉取代码
 
 ```bash
-  git clone https://github.com/openimsdk/open-im-ios-demo.git
-  cd open-im-ios-demo
+  git clone https://github.com/openimsdk/openim-ios-demo.git
+  cd openim-ios-demo
 ```
 
 2. 安装依赖
@@ -67,7 +67,7 @@ OpenIM 为开发者提供开源即时通讯 SDK，作为 Twilio、Sendbird 等�
    ```bash
    pod install
    ```
-   2.1 若安装失败，请执行以下命令，更新本地CocoaPods仓库列表。
+   2.1 若安装失败，提示没有找到某个依赖。请先执行以下命令，更新本地CocoaPods仓库列表。
    ```bash
    pod repo update
    ```
