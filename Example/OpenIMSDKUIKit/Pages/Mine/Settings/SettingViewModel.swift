@@ -52,7 +52,7 @@ class SettingViewModel {
     }
     
     func toggleRing() {
-        // 1关闭 2开启
+
         AccountViewModel.updateUserInfo(userID: AccountViewModel.userID!, allowBeep: self.setRingRelay.value ? 1 : 2) { [weak self] (errCode, errMsg) in
             guard let sself = self else { return }
             sself.setRingRelay.accept(!sself.setRingRelay.value)
@@ -61,7 +61,7 @@ class SettingViewModel {
     }
     
     func toggleVibrationRelay()  {
-        // 1关闭 2开启
+
         AccountViewModel.updateUserInfo(userID: AccountViewModel.userID!, allowVibration: self.setVibrationRelay.value ? 1 : 2) { [weak self] (errCode, errMsg) in
             guard let sself = self else { return }
             sself.setVibrationRelay.accept(!sself.setVibrationRelay.value)
@@ -70,7 +70,7 @@ class SettingViewModel {
     }
     
     func toggleForbbidenAddFriendRelay()  {
-        // 1关闭 2开启
+
         AccountViewModel.updateUserInfo(userID: AccountViewModel.userID!, allowAddFriend: self.setForbbidenAddFriendRelay.value ? 1 : 2) { [weak self] (errCode, errMsg) in
             guard let sself = self else { return }
             sself.setForbbidenAddFriendRelay.accept(!sself.setForbbidenAddFriendRelay.value)

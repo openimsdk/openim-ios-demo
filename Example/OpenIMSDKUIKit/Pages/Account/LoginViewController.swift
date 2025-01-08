@@ -64,14 +64,12 @@ class LoginViewController: UIViewController {
     
     private let inputAccountTag = 10006
     private let inputAccountPswTag = 10007
-    
-    // Declare the container view, tabBar, and scrollView
+
     let container = UIView()
     let tabBar = JXSegmentedView()
     let segmentedDataSource = JXSegmentedTitleDataSource()
     let scrollView = UIScrollView()
-    
-    // Views for each tab
+
     let phoneLoginView = UIView()  // For phone login style 1
     let emailLoginView = UIView()  // For email login style 2
     let accountLoginView = UIView()  // For account login style 2
@@ -264,20 +262,18 @@ class LoginViewController: UIViewController {
                 guard let sself = self else { return }
                 sself.toPrivacyRule()
             }).disposed(by: _disposeBag)
-        
-        // 协议
+
         let horSV = UIStackView.init(arrangedSubviews: [checkBoxButton, protocalLabel])
         horSV.alignment = .center
         horSV.spacing = 8
-        //        view.addSubview(horSV)
-        
-        //        horSV.snp.makeConstraints { make in
-        //            make.leading.trailing.equalTo(loginBtn)
-        //            make.top.equalTo(loginTypeBtn.snp.bottom).offset(16)
-        //        }
+
+
+
+
+
 #if ENABLE_ORGANIZATION
 #else
-        // 注册/找回密码
+
         let label = UILabel()
         label.textColor = DemoUI.color_8E9AB0
         label.font = .f12
@@ -371,14 +367,14 @@ class LoginViewController: UIViewController {
         case .account:
             break
         }
-        //        passwordTextField.text = nil
-        //        passwordTextField.sendActions(for: .allEditingEvents)
-        //
-        //                if codeLoginButton.isSelected {
-        //                    passwordTextField.rightView = countDownButton
-        //                } else {
-        //                    passwordTextField.rightView = pswRightView
-        //                }
+
+
+
+
+
+
+
+
     }
     
     private func setupCountdownButton() -> CountDownTimerButton {
@@ -424,18 +420,16 @@ class LoginViewController: UIViewController {
     }
     
     private func setupContainerView() {
-        // Setup the container view
+
         view.addSubview(container)
         container.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(32.w)
         }
-        
-        // Setup the tabBar
+
         setupTabBar()
-        
-        // Setup the scrollView for tab views
+
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
@@ -449,8 +443,7 @@ class LoginViewController: UIViewController {
             make.top.equalTo(tabBar.snp.bottom).offset(16.h)
             make.leading.trailing.bottom.equalTo(container)
         }
-        
-        // Setup tab views
+
         setupTabViews()
     }
     
@@ -496,12 +489,11 @@ class LoginViewController: UIViewController {
     }
     
     private func setupTabViews() {
-        // Add tab views to scrollView
+
         scrollView.addSubview(phoneLoginView)
         scrollView.addSubview(emailLoginView)
         scrollView.addSubview(accountLoginView)
-        
-        // Setup each login view
+
         let temp = setupLoginStyle1(in: phoneLoginView) // For phone login
         temp.account.tag = inputPhoneTag
         temp.password.tag = inputPhonePswTag
@@ -527,8 +519,7 @@ class LoginViewController: UIViewController {
         case .account:
             temp3.account.text = preAccount
         }
-        
-        // Set constraints for the tab views inside the scrollView
+
         let tabViews = [phoneLoginView, emailLoginView, accountLoginView]
         for (index, view) in tabViews.enumerated() {
             view.snp.makeConstraints { make in
@@ -545,8 +536,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    // Setup for login style 1 (used for phone login)
+
     private func setupLoginStyle1(in view: UIView) -> (account: UITextField, password: UITextField) {
         let phoneTextField = setupAccountTextField()
         phoneTextField.keyboardType = .numberPad
@@ -564,8 +554,7 @@ class LoginViewController: UIViewController {
         
         return (account: phoneTextField, password: passwordTextField)
     }
-    
-    // Setup for login style 2 (used for email and account login)
+
     private func setupLoginStyle2(in view: UIView) -> (account: UITextField, password: UITextField) {
         
         let accountTextField = setupAccountTextField()
@@ -669,29 +658,26 @@ class LoginViewController: UIViewController {
         
         return rightView
     }
-    
-    // Switch between tabs with optional animation
+
     private func switchToTab(index: Int, animated: Bool) {
         let offsetX = CGFloat(index) * scrollView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
     }
 }
 
-// MARK: - UITabBarDelegate
 
 extension LoginViewController: JXSegmentedViewDelegate {
     func segmentedView(_ segmentedView: JXSegmentedView, didSelectedItemAt index: Int) {
-        //        switchToTab(index: index, animated: true)
+
         loginType = LoginType(rawValue: index)!
         view.endEditing(true)
         bindData()
     }
 }
 
-// MARK: - UIScrollViewDelegate
 
 extension LoginViewController: UIScrollViewDelegate {
-    // Sync the tabBar selection and indicator when the user manually swipes
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         tabBar.selectItemAt(index: pageIndex)

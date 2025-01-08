@@ -8,7 +8,7 @@ class ScreenLockSettingViewController: UITableViewController {
     
     func showScreenLock(inController:UIViewController, onFailure: @escaping () -> Void) {
         if AccountViewModel.userID == nil {
-            // 未登录，不展示
+
             return
         }
         self.onFailure = onFailure
@@ -79,7 +79,7 @@ class ScreenLockSettingViewController: UITableViewController {
     }
 
     private func setupData() {
-        //生物解锁
+
         let authenticationContext = LAContext()
         var error: NSError?
         isBiometricsAvailable = authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
@@ -148,13 +148,13 @@ class ScreenLockSettingViewController: UITableViewController {
         let rowType: RowType = rowItems[indexPath.row]
         
         switch rowType {
-//        case.tips:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className, for: indexPath)
-//            cell.textLabel?.text = "开启后，可使用".localized() + biometricsType + "解锁".localized()
-//            cell.textLabel?.textColor = DemoUI.color_999999
-//            cell.textLabel?.font = .systemFont(ofSize: 12)
-//            cell.backgroundColor = .clear
-//            return cell
+
+
+
+
+
+
+
         case .enablePasswordLock:
             let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.className, for: indexPath) as! SwitchTableViewCell
             cell.titleLabel.text = rowType.title
@@ -174,22 +174,19 @@ class ScreenLockSettingViewController: UITableViewController {
             
             return cell
         }
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: OptionTableViewCell.className, for: indexPath) as! OptionTableViewCell
-//
-//        cell.titleLabel.text = rowType.title
-        
-//        return cell
+
+
+
+
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let rowType: RowType = rowItems[indexPath.row]
-        
-//        if rowType == .tips {
-//            return 30
-//        } else {
+
+
+
+
         return 60.h
-//        }
+
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -203,8 +200,8 @@ class ScreenLockSettingViewController: UITableViewController {
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowType: RowType = rowItems[indexPath.row]
         switch rowType {
-//        case .resetGestureLock:
-//            setPasswordLock()
+
+
         default:
             break
         }
@@ -214,8 +211,8 @@ class ScreenLockSettingViewController: UITableViewController {
     
         case enablePasswordLock
         case enableBiometrics
-//        case tips
-//        case resetGestureLock
+
+
         
         var title: String {
             switch self {
@@ -223,10 +220,10 @@ class ScreenLockSettingViewController: UITableViewController {
                 return "开启".localized() + "密码锁定".localized()
             case .enableBiometrics:
                 return "开启".localized() + "生物识别".localized()
-//            case .tips:
-//                return "开启后，可使用".localized() + "面容ID/指纹解锁".localized()
-//            case .resetGestureLock:
-//                return "重置手势密码".localized()
+
+
+
+
             }
         
         }

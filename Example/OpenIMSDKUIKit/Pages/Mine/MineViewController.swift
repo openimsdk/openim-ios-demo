@@ -203,11 +203,11 @@ extension MineViewController: UITableViewDataSource, UITableViewDelegate {
                 self?._viewModel.logout()
             }
         case .invitationCode:
-//            if let urlString = AccountViewModel.clientConfig?.config?.adminURL, let url = URL(string: urlString) {
-//                if UIApplication.shared.canOpenURL(url) {
-//                    UIApplication.shared.openURL(url)
-//                }
-//            }
+
+
+
+
+
             print("disable invitation code")
         case .aboutUs:
             let vc = AboutUsViewController()

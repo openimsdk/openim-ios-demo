@@ -75,7 +75,7 @@ class SettingTableViewController: UITableViewController {
                 self?._viewModel.toggleNotDisturbStatus()
             }).disposed(by: cell.disposeBag)
             cell.titleLabel.text = rowType.title
-//            cell.subTitleLabel.text = "开启后，不接收离线推送消息".localized()
+
             return cell
         case .blocked:
             cell.titleLabel.text = rowType.title

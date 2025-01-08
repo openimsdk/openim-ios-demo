@@ -35,7 +35,7 @@ class ProfileTableViewController: OUIIM.ProfileTableViewController {
             
             if result.isSuccess {
                 self?._viewModel.uploadFile(fullPath: result.fullPath, onProgress: { [weak self] progress in
-//                    ProgressHUD.progress(progress)
+
                 }, onComplete: { [weak self] code, msg in
                     if code == 0 {
                         self?.user?.faceURL = "file://" + result.fullPath
@@ -59,7 +59,7 @@ class ProfileTableViewController: OUIIM.ProfileTableViewController {
                 let result = FileHelper.shared.saveImage(image: photo)
                 if result.isSuccess {
                     self?._viewModel.uploadFile(fullPath: result.fullPath, onProgress: { [weak self] progress in
-//                        ProgressHUD.progress(progress)
+
                     }, onComplete: { [weak self] code, msg in
                         if code == 0 {
                             self?.user?.faceURL = "file://" + result.fullPath

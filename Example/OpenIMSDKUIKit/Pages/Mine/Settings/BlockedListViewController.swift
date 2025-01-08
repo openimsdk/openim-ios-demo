@@ -81,16 +81,15 @@ open class BlockedListViewController: UIViewController {
             cell.avatarImageView.setAvatar(url: item.faceURL, text: item.nickname, onTap: nil)
             return cell
         }.disposed(by: _disposeBag)
-        
-//        _tableView.rx.modelSelected(BlackInfo.self).subscribe(onNext: { [weak self] (blackInfo: BlackInfo) in
-//            IMController.shared.getConversation(sessionType: .c2c, sourceId: blackInfo.userID!) { [weak self] (conversation: ConversationInfo?) in
-//                guard let conversation = conversation else { return }
-//                let viewModel = MessageListViewModel(userId: blackInfo.userID, conversation: conversation)
-//                let controller = MessageListViewController(viewModel: viewModel)
-//                controller.hidesBottomBarWhenPushed = true
-//                self?.navigationController?.pushViewController(controller, animated: true)
-//            }
-//        }).disposed(by: _disposeBag)
+
+
+
+
+
+
+
+
+
     }
     
     deinit {

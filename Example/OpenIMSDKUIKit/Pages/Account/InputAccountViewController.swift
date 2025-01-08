@@ -69,7 +69,7 @@ public class InputAccountViewController: UIViewController {
             guard let sself = self else { return }
             let alert = UIAlertController(style: .actionSheet, title: "Phone Codes")
             alert.addLocalePicker(type: .phoneCode) {[weak self] info in
-                // action with selected object
+
                 guard let phoneCode = info?.phoneCode else {return}
                 self?._areaCode = phoneCode
                 t.setTitle("\(phoneCode)", for: .normal)
@@ -256,17 +256,16 @@ public class InputAccountViewController: UIViewController {
                 guard let sself = self else { return }
                 sself.toPrivacyRule()
             }).disposed(by: _disposeBag)
-                
-        // 协议
+
         let horSV = UIStackView.init(arrangedSubviews: [checkBoxButton, protocalLabel])
         horSV.alignment = .center
         horSV.spacing = 8
-//        view.addSubview(horSV)
-//        
-//        horSV.snp.makeConstraints { make in
-//            make.leading.trailing.equalTo(loginBtn)
-//            make.top.equalTo(loginBtn.snp.bottom).offset(16)
-//        }
+
+
+
+
+
+
     }
     
     private func bindData() {
