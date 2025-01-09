@@ -190,6 +190,8 @@ public class IMController: NSObject {
     public var enableRing = true
 
     public var enableVibration = true
+    
+    fileprivate var appName: String!
 
     public func setup(businessServer: String, businessToken: String?) {
         Self.shared.businessServer = businessServer
@@ -197,6 +199,11 @@ public class IMController: NSObject {
     }
     
     public func setup(sdkAPIAdrr: String, sdkWSAddr: String, logLevel: Int = 3, onKickedOffline: (() -> Void)? = nil, onUserTokenInvalid: (() -> Void)? = nil) {
+        
+        let infoDictionary = Bundle.main.infoDictionary
+        let displayName = infoDictionary!["CFBundleDisplayName"] as? String
+        appName = displayName ?? ""
+        
         self.sdkAPIAdrr = sdkAPIAdrr
         let manager = OIMManager.manager
         
@@ -817,6 +824,11 @@ extension IMController {
     }
     
     public func sendMessage(message: MessageInfo, to recvID: String, conversationType: ConversationType = .c2c, onComplete: @escaping CallBack.MessageReturnVoid) {
+        let offlinePushInfo = message.offlinePushInfo
+        offlinePushInfo.title = offlinePushInfo.title ?? appName
+        offlinePushInfo.desc = offlinePushInfo.desc ?? "offlineMessage".innerLocalized()
+        message.offlinePushInfo = offlinePushInfo
+        
         sendHelper(message: message.toOIMMessageInfo(), to: recvID, conversationType: conversationType, onComplete: onComplete)
     }
     

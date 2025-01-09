@@ -13,9 +13,9 @@ public struct LocationPoint: Encodable {
 
 typealias LocationCallback = (_ point: LocationPoint) -> Void
 
-fileprivate let webKey = "75a0da9ec836d573102999e99abf4650"
-fileprivate let webServerKey = "835638634b8f9b4bba386eeec94aa7df"
-fileprivate let host = "http://location.rentsoft.cn"
+fileprivate let webKey = "your-web-key"
+fileprivate let webServerKey = "your-web-server-key"
+fileprivate let host = "http://location.your-domain"
 
 class LocationViewController: UIViewController, WKScriptMessageHandler {
     
