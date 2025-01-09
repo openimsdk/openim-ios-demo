@@ -33,7 +33,7 @@
 
 ### 离线推送横幅设置
 
-目前SDK的设计是直接由客户端控制推送横幅的展示内容。发送消息时，设置入参[offlinePushInfo](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUICore/Classes/Core/IMController.swift#L819)：
+目前SDK的设计是直接由客户端控制推送横幅的展示内容。发送消息时，设置入参[offlinePushInfo](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUICore/Classes/Core/IMController.swift#L826)：
 
 ```swift
   let offlinePushInfo = OfflinePushInfo(
@@ -53,8 +53,8 @@
 
 需要配置对应的 AMap Key。具体请参考 [AMap 文档](https://lbs.amap.com/)，工程中的代码需要修改以下 Key：
 
-- **[webKey](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L16)**
-- **[webServerKey](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L17)**
+- **[webKey](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L16)**
+- **[webServerKey](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L17)**
 
 ```swift
   fileprivate let webKey = "your-web-key"

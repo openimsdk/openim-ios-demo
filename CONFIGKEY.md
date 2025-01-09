@@ -33,7 +33,7 @@ According to the integration guide of [FCM](https://firebase.google.com/docs/clo
 
 ### Offline push banner settings
 
-The current SDK design is that the display content of the push banner is directly controlled by the client. When sending a message, set the input parameter [offlinePushInfo](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUICore/Classes/Core/IMController.swift#L819):
+The current SDK design is that the display content of the push banner is directly controlled by the client. When sending a message, set the input parameter [offlinePushInfo](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUICore/Classes/Core/IMController.swift#L826):
 
 ```swift
   let offlinePushInfo = OfflinePushInfo(
@@ -53,8 +53,8 @@ According to actual needs, complete the corresponding client and server configur
 
 Need to configure the corresponding AMap Key. Please refer to [AMap Document](https://lbs.amap.com/) for details. The code in the project needs to modify the following Key:
 
-- **[webKey](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L16)**
-- **[webServerKey](https://github.com/openimsdk/openim-ios-demo/blob/b6057a6aeab0b766ada76241ba783fa819bb2e70/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L17)**
+- **[webKey](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L16)**
+- **[webServerKey](https://github.com/openimsdk/openim-ios-demo/blob/fd130e9282d582f6681f5e905b61e8ba02e398b6/OUIIM/Classes/OIMUIChat/LocationViewController.swift#L17)**
 
 ```swift
   fileprivate let webKey = "your-web-key"
