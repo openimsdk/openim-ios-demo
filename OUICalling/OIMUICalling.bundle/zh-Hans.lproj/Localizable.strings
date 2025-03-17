@@ -1,0 +1,7 @@
+"音视频" = "Calling";
+"callFail" = "你无法呼叫该用户";
+"callingBusy" = "你已在通话中或正在会议中，不能进行此操作！";
+"connectionFailed" = "连接失败";
+"networkNotStable" = "你的网络不稳定";
+"otherNetworkNotStableHint" = "对方网络不稳定";
+"callingInterruption" = "通话中断";

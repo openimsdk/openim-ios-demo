@@ -1,0 +1,401 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireNetworkActivityLogger (2.4.0):
+    - Alamofire (~> 4.8)
+  - ChatLayout (2.0.10):
+    - ChatLayout/Ultimate (= 2.0.10)
+  - ChatLayout/Core (2.0.10)
+  - ChatLayout/Extras (2.0.10):
+    - ChatLayout/Core
+  - ChatLayout/Ultimate (2.0.10):
+    - ChatLayout/Core
+    - ChatLayout/Extras
+  - CocoaAsyncSocket (7.6.5)
+  - DifferenceKit (1.3.0):
+    - DifferenceKit/Core (= 1.3.0)
+    - DifferenceKit/UIKitExtension (= 1.3.0)
+  - DifferenceKit/Core (1.3.0)
+  - DifferenceKit/UIKitExtension (1.3.0):
+    - DifferenceKit/Core
+  - Differentiator (5.0.0)
+  - Firebase/Core (11.6.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (~> 11.6.0)
+  - Firebase/CoreOnly (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+  - Firebase/Messaging (11.6.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 11.6.0)
+  - FirebaseAnalytics (11.6.0):
+    - FirebaseAnalytics/AdIdSupport (= 11.6.0)
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/MethodSwizzler (~> 8.0)
+    - GoogleUtilities/Network (~> 8.0)
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+    - nanopb (~> 3.30910.0)
+  - FirebaseAnalytics/AdIdSupport (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleAppMeasurement (= 11.6.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/MethodSwizzler (~> 8.0)
+    - GoogleUtilities/Network (~> 8.0)
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+    - nanopb (~> 3.30910.0)
+  - FirebaseCore (11.6.0):
+    - FirebaseCoreInternal (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/Logger (~> 8.0)
+  - FirebaseCoreInternal (11.6.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+  - FirebaseInstallations (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseMessaging (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/Reachability (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement (11.6.0):
+    - GoogleAppMeasurement/AdIdSupport (= 11.6.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/MethodSwizzler (~> 8.0)
+    - GoogleUtilities/Network (~> 8.0)
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement/AdIdSupport (11.6.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 11.6.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/MethodSwizzler (~> 8.0)
+    - GoogleUtilities/Network (~> 8.0)
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (11.6.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
+    - GoogleUtilities/MethodSwizzler (~> 8.0)
+    - GoogleUtilities/Network (~> 8.0)
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+    - nanopb (~> 3.30910.0)
+  - GoogleDataTransport (10.1.0):
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - GoogleUtilities/AppDelegateSwizzler (8.0.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Environment (8.0.2):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.0.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/MethodSwizzler (8.0.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Network (8.0.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Privacy
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (8.0.2)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.0.2)
+  - GoogleUtilities/Reachability (8.0.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/UserDefaults (8.0.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - InputBarAccessoryView (6.3.0):
+    - InputBarAccessoryView/Core (= 6.3.0)
+  - InputBarAccessoryView/Core (6.3.0)
+  - JXSegmentedView (1.4.1)
+  - Kingfisher (8.0.1)
+  - KTVHTTPCache (3.0.2):
+    - CocoaAsyncSocket
+  - Lantern (1.1.5)
+  - LiveKitClient (2.0.14):
+    - LiveKitWebRTC (= 125.6422.07)
+    - Logging
+    - SwiftProtobuf
+  - LiveKitWebRTC (125.6422.07)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
+  - Logging (1.4.0)
+  - lottie-ios (3.5.0)
+  - MJExtension (3.4.2)
+  - MJRefresh (3.7.9)
+  - MMBAlertsPickers (1.1.93)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
+  - "OpenIMSDK (3.8.3+3)":
+    - MJExtension
+    - "OpenIMSDK/Callbacker (= 3.8.3+3)"
+    - "OpenIMSDK/CallbackProxy (= 3.8.3+3)"
+    - "OpenIMSDK/Interface (= 3.8.3+3)"
+    - "OpenIMSDK/Model (= 3.8.3+3)"
+    - "OpenIMSDK/Utils (= 3.8.3+3)"
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDK/Callbacker (3.8.3+3)":
+    - MJExtension
+    - OpenIMSDK/Model
+    - OpenIMSDK/Utils
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDK/CallbackProxy (3.8.3+3)":
+    - MJExtension
+    - OpenIMSDK/Utils
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDK/Interface (3.8.3+3)":
+    - MJExtension
+    - OpenIMSDK/Callbacker
+    - OpenIMSDK/CallbackProxy
+    - OpenIMSDK/Model
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDK/Model (3.8.3+3)":
+    - MJExtension
+    - OpenIMSDK/Utils
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDK/Utils (3.8.3+3)":
+    - MJExtension
+    - "OpenIMSDKCore (= 3.8.3+3)"
+  - "OpenIMSDKCore (3.8.3+3)"
+  - OUICalling (0.0.1):
+    - Kingfisher
+    - LiveKitClient
+    - lottie-ios
+    - OpenIMSDK
+    - OUICore
+    - ProgressHUD
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+  - OUICore (0.0.1):
+    - Alamofire (= 4.9.1)
+    - Kingfisher (= 8.0.1)
+    - KTVHTTPCache (= 3.0.2)
+    - Localize-Swift (~> 3.2)
+    - lottie-ios (~> 3.0)
+    - "OpenIMSDK (= 3.8.3+3)"
+    - ProgressHUD
+    - RxCocoa (~> 6.0)
+    - RxDataSources
+    - RxKeyboard (~> 2.0)
+    - RxSwift (~> 6.5)
+    - SnapKit (~> 4.0)
+    - YYText
+    - ZLPhotoBrowser
+  - OUICoreView (0.0.1):
+    - KTVHTTPCache
+    - Lantern
+    - OUICore
+    - SnapKit
+    - ZFPlayer (~> 4.0)
+    - ZFPlayer/AVPlayer (~> 4.0)
+    - ZFPlayer/ControlView (~> 4.0)
+  - OUIIM (0.0.1):
+    - ChatLayout (= 2.0.10)
+    - DifferenceKit
+    - InputBarAccessoryView
+    - JXSegmentedView
+    - MJRefresh
+    - OUICalling
+    - OUICore
+    - OUICoreView
+    - ProgressHUD
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - YYText
+  - ProgressHUD (14.1.3)
+  - PromisesObjC (2.4.0)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
+  - SGCodeTextField (0.1.4)
+  - SnapKit (4.2.0)
+  - SwiftProtobuf (1.28.2)
+  - YYText (1.0.7)
+  - ZFPlayer (4.1.4):
+    - ZFPlayer/Core (= 4.1.4)
+  - ZFPlayer/AVPlayer (4.1.4):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (4.1.4):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (4.1.4)
+  - ZLPhotoBrowser (4.4.8.2):
+    - ZLPhotoBrowser/Core (= 4.4.8.2)
+  - ZLPhotoBrowser/Core (4.4.8.2)
+
+DEPENDENCIES:
+  - AlamofireNetworkActivityLogger (from `../3rd`)
+  - Firebase/Core
+  - Firebase/Messaging
+  - InputBarAccessoryView (from `../3rd`)
+  - JXSegmentedView
+  - Lantern (from `https://github.com/std-s/Lantern.git`)
+  - Localize-Swift (~> 3.2)
+  - MMBAlertsPickers
+  - OUICalling (from `../`)
+  - OUICore (from `../`)
+  - OUICoreView (from `../`)
+  - OUIIM (from `../`)
+  - ProgressHUD (from `https://github.com/std-s/ProgressHUD.git`)
+  - RxGesture (~> 4.0.4)
+  - SGCodeTextField
+  - ZFPlayer (from `../3rd`)
+  - ZLPhotoBrowser (from `../3rd`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ChatLayout
+    - CocoaAsyncSocket
+    - DifferenceKit
+    - Differentiator
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreInternal
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
+    - JXSegmentedView
+    - Kingfisher
+    - KTVHTTPCache
+    - LiveKitClient
+    - LiveKitWebRTC
+    - Localize-Swift
+    - Logging
+    - lottie-ios
+    - MJExtension
+    - MJRefresh
+    - MMBAlertsPickers
+    - nanopb
+    - OpenIMSDK
+    - OpenIMSDKCore
+    - PromisesObjC
+    - RxCocoa
+    - RxDataSources
+    - RxGesture
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - SGCodeTextField
+    - SnapKit
+    - SwiftProtobuf
+    - YYText
+
+EXTERNAL SOURCES:
+  AlamofireNetworkActivityLogger:
+    :path: "../3rd"
+  InputBarAccessoryView:
+    :path: "../3rd"
+  Lantern:
+    :git: https://github.com/std-s/Lantern.git
+  OUICalling:
+    :path: "../"
+  OUICore:
+    :path: "../"
+  OUICoreView:
+    :path: "../"
+  OUIIM:
+    :path: "../"
+  ProgressHUD:
+    :git: https://github.com/std-s/ProgressHUD.git
+  ZFPlayer:
+    :path: "../3rd"
+  ZLPhotoBrowser:
+    :path: "../3rd"
+
+CHECKOUT OPTIONS:
+  Lantern:
+    :commit: c8b0acdec74c42f1ac4b69449c65ade2ae8d86e7
+    :git: https://github.com/std-s/Lantern.git
+  ProgressHUD:
+    :commit: 1f6664747e675b3ff91754d490744bfb4e60699a
+    :git: https://github.com/std-s/ProgressHUD.git
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireNetworkActivityLogger: 456afe20d8593fe85a95e3a70750e2bccfeafb25
+  ChatLayout: 004369aa1d00f6490660980c1af48a546388ea2e
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  DifferenceKit: ab185c4d7f9cef8af3fcf593e5b387fb81e999ca
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
+  FirebaseAnalytics: 7114c698cac995602e3b1b96663473e50d54d6e7
+  FirebaseCore: 48b0dd707581cf9c1a1220da68223fb0a562afaa
+  FirebaseCoreInternal: d98ab91e2d80a56d7b246856a8885443b302c0c2
+  FirebaseInstallations: efc0946fc756e4d22d8113f7c761948120322e8c
+  FirebaseMessaging: e1aca1fcc23e8b9eddb0e33f375ff90944623021
+  GoogleAppMeasurement: 6a9e6317b6a6d810ad03d4a66564ca6c4c5818a3
+  GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
+  InputBarAccessoryView: 55a728753108bdba75a036ffe8db291abae5910e
+  JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
+  Kingfisher: f08adbfe0e6806e9f5666e69b31fc4f17342d0cc
+  KTVHTTPCache: 5711692cdf9a5ecfe829b1e16577deb3ffe3dc86
+  Lantern: b192e7146c6d04e15e627f37281254a6a8593703
+  LiveKitClient: 5257248932a54e8290a52fb9508394a7389486c6
+  LiveKitWebRTC: 99d224d0d657e09b9463d03376194b14f308ab1e
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  MMBAlertsPickers: d52d288114c7dad4e4f1282fb2b1f1189ccc117a
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  OpenIMSDK: 3505fab896ba392e27f6909460f08e41ce1d956f
+  OpenIMSDKCore: 75caba22be8ee484011f367711178312bd64a17d
+  OUICalling: 988fc2bb5ed0007a70755ef261b92848c9e912ee
+  OUICore: 56f47222a2c53760c0b81b0fc75640cbe35bd394
+  OUICoreView: dd0bba4b7a7a29e5128b47d82cc9af51761f6a48
+  OUIIM: 35d3de207f0fb6b880aba6930af51fe8fe9e5c40
+  ProgressHUD: b736f0c6de97f37f64e847f80689c23a14026adf
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SGCodeTextField: 6b65291a52a092c24bd08cc32873e024223b2371
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftProtobuf: 4dbaffec76a39a8dc5da23b40af1a5dc01a4c02d
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZFPlayer: 126dc958b0811a19390bdbf74c424ea833016fbd
+  ZLPhotoBrowser: cd023607d05a72d27a3ae57f50dbf86910713a2c
+
+PODFILE CHECKSUM: 3fb3040226910f5a178f131cb6441804d914d3ca
+
+COCOAPODS: 1.16.2
