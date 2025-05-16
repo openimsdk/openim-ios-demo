@@ -34,8 +34,8 @@ This repository is licensed under the GNU Affero General Public License Version 
 
 Before you start development, ensure that the following software is installed on your system:
 
-- **Operating System**: macOS 14.6 or later
-- **Xcode**: Version 15.4
+- **Operating System**: macOS 15 or later
+- **Xcode**: Version 16.1
 - **Git**: For version control
 
 Additionally, make sure you have [deployed](https://docs.openim.io/zh-Hans/guides/gettingStarted/dockerCompose) the latest version of the OpenIM Server. After deployment, you can compile the project and connect it to your server for testing.
