@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLEmbedAlbumListView.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/9/7.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import Photos
@@ -30,7 +30,7 @@ import Photos
 class ZLEmbedAlbumListView: UIView {
     static let rowH: CGFloat = 60
     
-    private var selectedAlbum: ZLAlbumListModel
+    private var selectedAlbum: ZLAlbumListModel?
     
     private lazy var tableBgView = UIView()
     
@@ -55,7 +55,7 @@ class ZLEmbedAlbumListView: UIView {
     
     private var orientation: UIInterfaceOrientation = UIApplication.shared.statusBarOrientation
     
-    init(selectedAlbum: ZLAlbumListModel) {
+    init(selectedAlbum: ZLAlbumListModel?) {
         self.selectedAlbum = selectedAlbum
         super.init(frame: .zero)
         setupUI()
@@ -140,14 +140,15 @@ class ZLEmbedAlbumListView: UIView {
         hide()
         hideBlock?()
     }
-
+    
+    /// 这里不采用监听相册发生变化的方式，是因为每次变化，系统都会回调多次，造成重复获取相册列表
     func show(reloadAlbumList: Bool) {
         guard reloadAlbumList else {
             animateShow()
             return
         }
         
-        if #available(iOS 14.0, *), PHPhotoLibrary.authorizationStatus(for: .readWrite) == .limited {
+        if #available(iOS 14.0, *), PHPhotoLibrary.zl.authStatus(for: .readWrite) == .limited {
             loadAlbumList { [weak self] in
                 self?.animateShow()
             }

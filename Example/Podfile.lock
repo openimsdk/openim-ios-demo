@@ -241,7 +241,7 @@ PODS:
   - RxSwift (6.9.0)
   - SGCodeTextField (0.1.4)
   - SnapKit (4.2.0)
-  - SwiftProtobuf (1.29.0)
+  - SwiftProtobuf (1.30.0)
   - YYText (1.0.7)
   - ZFPlayer (4.1.4):
     - ZFPlayer/Core (= 4.1.4)
@@ -250,9 +250,9 @@ PODS:
   - ZFPlayer/ControlView (4.1.4):
     - ZFPlayer/Core
   - ZFPlayer/Core (4.1.4)
-  - ZLPhotoBrowser (4.4.8.2):
-    - ZLPhotoBrowser/Core (= 4.4.8.2)
-  - ZLPhotoBrowser/Core (4.4.8.2)
+  - ZLPhotoBrowser (4.6.0.1):
+    - ZLPhotoBrowser/Core (= 4.6.0.1)
+  - ZLPhotoBrowser/Core (4.6.0.1)
 
 DEPENDENCIES:
   - AlamofireNetworkActivityLogger (from `../3rd`)
@@ -395,11 +395,11 @@ SPEC CHECKSUMS:
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   SGCodeTextField: 6b65291a52a092c24bd08cc32873e024223b2371
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftProtobuf: b7aa08087e2ab6d162862d143020091254095f69
+  SwiftProtobuf: 3697407f0d5b23bedeba9c2eaaf3ec6fdff69349
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFPlayer: 126dc958b0811a19390bdbf74c424ea833016fbd
-  ZLPhotoBrowser: cd023607d05a72d27a3ae57f50dbf86910713a2c
+  ZLPhotoBrowser: c54edcfb58c567e9de005997f200b94dc8dd0c97
 
-PODFILE CHECKSUM: 843dfbb94004b35e47335aac2c1459bd562fc8de
+PODFILE CHECKSUM: 887fe5e887b797e74e5aa9f37e1e8f7ff3177e31
 
 COCOAPODS: 1.16.2

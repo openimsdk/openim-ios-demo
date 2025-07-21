@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLVideoManager.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/9/23.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import AVFoundation
@@ -44,10 +44,11 @@ public class ZLVideoManager: NSObject {
             }
         }
     }
-
-    @objc public class func mergeVideos(fileUrls: [URL], completion: @escaping ((URL?, Error?) -> Void)) {
+    
+    /// 没有针对不同分辨率视频做处理，仅用于处理相机拍照的视频
+    @objc public class func mergeVideos(fileURLs: [URL], completion: @escaping ((URL?, Error?) -> Void)) {
         let composition = AVMutableComposition()
-        let assets = fileUrls.map { AVURLAsset(url: $0) }
+        let assets = fileURLs.map { AVURLAsset(url: $0) }
         
         var insertTime: CMTime = .zero
         var assetVideoTracks: [AVAssetTrack] = []
@@ -101,8 +102,8 @@ public class ZLVideoManager: NSObject {
             return
         }
         
-        let outputUrl = URL(fileURLWithPath: ZLVideoManager.getVideoExportFilePath())
-        exportSession.outputURL = outputUrl
+        let outputURL = URL(fileURLWithPath: ZLVideoManager.getVideoExportFilePath())
+        exportSession.outputURL = outputURL
         exportSession.shouldOptimizeForNetworkUse = true
         exportSession.outputFileType = ZLPhotoConfiguration.default().cameraConfiguration.videoExportType.avFileType
         exportSession.videoComposition = videoComposition
@@ -112,7 +113,7 @@ public class ZLVideoManager: NSObject {
                 zl_debugPrint("ZLPhotoBrowser: video merge failed:  \(exportSession.error?.localizedDescription ?? "")")
             }
             ZLMainAsync {
-                completion(suc ? outputUrl : nil, exportSession.error)
+                completion(suc ? outputURL : nil, exportSession.error)
             }
         })
     }
@@ -166,6 +167,7 @@ public class ZLVideoManager: NSObject {
     }
 }
 
+// MARK: export methods
 
 public extension ZLVideoManager {
     @objc class func exportVideo(for asset: PHAsset, exportType: ZLVideoManager.ExportType = .mov, presetName: String = AVAssetExportPresetMediumQuality, complete: @escaping ((URL?, Error?) -> Void)) {
@@ -184,12 +186,12 @@ public extension ZLVideoManager {
     }
     
     @objc class func exportVideo(for asset: AVAsset, range: CMTimeRange = CMTimeRange(start: .zero, duration: .positiveInfinity), exportType: ZLVideoManager.ExportType = .mov, presetName: String = AVAssetExportPresetMediumQuality, complete: @escaping ((URL?, Error?) -> Void)) {
-        let outputUrl = URL(fileURLWithPath: getVideoExportFilePath(format: exportType.format))
+        let outputURL = URL(fileURLWithPath: getVideoExportFilePath(format: exportType.format))
         guard let exportSession = AVAssetExportSession(asset: asset, presetName: presetName) else {
             complete(nil, NSError.videoExportError)
             return
         }
-        exportSession.outputURL = outputUrl
+        exportSession.outputURL = outputURL
         exportSession.outputFileType = exportType.avFileType
         exportSession.timeRange = range
         
@@ -199,7 +201,7 @@ public extension ZLVideoManager {
                 zl_debugPrint("ZLPhotoBrowser: video export failed: \(exportSession.error?.localizedDescription ?? "")")
             }
             ZLMainAsync {
-                complete(suc ? outputUrl : nil, exportSession.error)
+                complete(suc ? outputURL : nil, exportSession.error)
             }
         })
     }

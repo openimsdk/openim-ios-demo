@@ -1,9 +1,9 @@
-
-
-
-
-
-
+//
+//  ZLCustomAlertProtocol.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2022/6/29.
+//
 
 import UIKit
 
@@ -13,7 +13,7 @@ public enum ZLCustomAlertStyle {
 }
 
 public protocol ZLCustomAlertProtocol: AnyObject {
-
+    /// Should return an instance of ZLCustomAlertProtocol
     static func alert(title: String?, message: String, style: ZLCustomAlertStyle) -> ZLCustomAlertProtocol
     
     func addAction(_ action: ZLCustomAlertAction)
@@ -47,6 +47,7 @@ public class ZLCustomAlertAction: NSObject {
     }
 }
 
+/// internal
 extension ZLCustomAlertStyle {
     var toSystemAlertStyle: UIAlertController.Style {
         switch self {
@@ -58,6 +59,7 @@ extension ZLCustomAlertStyle {
     }
 }
 
+/// internal
 extension ZLCustomAlertAction.Style {
     var toSystemAlertActionStyle: UIAlertAction.Style {
         switch self {
@@ -71,6 +73,7 @@ extension ZLCustomAlertAction.Style {
     }
 }
 
+/// internal
 extension ZLCustomAlertAction {
     func toSystemAlertAction() -> UIAlertAction {
         return UIAlertAction(title: title, style: style.toSystemAlertActionStyle) { _ in

@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLEditVideoViewController.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/8/30.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import Photos
@@ -151,12 +151,14 @@ public class ZLEditVideoViewController: UIViewController {
     
     @objc public var editFinishBlock: ((URL?) -> Void)?
     
+    @objc public var cancelEditBlock: (() -> Void)?
+    
     override public var prefersStatusBarHidden: Bool {
         return true
     }
     
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        deviceIsiPhone() ? .portrait : .all
     }
     
     deinit {
@@ -172,10 +174,11 @@ public class ZLEditVideoViewController: UIViewController {
         
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
-
-
-
-
+    
+    /// initialize
+    /// - Parameters:
+    ///   - avAsset: AVAsset对象，需要传入本地视频，网络视频不支持
+    ///   - animateDismiss: 退出界面时是否显示dismiss动画
     @objc public init(avAsset: AVAsset, animateDismiss: Bool = false) {
         self.avAsset = avAsset
         self.animateDismiss = animateDismiss
@@ -236,7 +239,7 @@ public class ZLEditVideoViewController: UIViewController {
         
         let frameViewW = ZLEditVideoViewController.frameImageSize.width * 10
         frameImageBorderView.frame = CGRect(x: (view.bounds.width - frameViewW) / 2, y: collectionView.frame.minY, width: frameViewW, height: ZLEditVideoViewController.frameImageSize.height)
-
+        // 左右拖动view
         let leftRightSideViewW = ZLEditVideoViewController.frameImageSize.width / 2
         leftSideView.frame = CGRect(x: frameImageBorderView.frame.minX, y: collectionView.frame.minY, width: leftRightSideViewW, height: ZLEditVideoViewController.frameImageSize.height)
         let rightSideViewX = view.bounds.width - frameImageBorderView.frame.minX - leftRightSideViewW
@@ -267,7 +270,9 @@ public class ZLEditVideoViewController: UIViewController {
     }
     
     @objc private func cancelBtnClick() {
-        dismiss(animated: animateDismiss, completion: nil)
+        dismiss(animated: animateDismiss) {
+            self.cancelEditBlock?()
+        }
     }
     
     @objc private func doneBtnClick() {
@@ -284,7 +289,8 @@ public class ZLEditVideoViewController: UIViewController {
             showAlertView(message, self)
             return
         }
-
+        
+        // Max deviation is 0.01
         if abs(d - round(CGFloat(avAsset.duration.seconds))) <= 0.01 {
             dismiss(animated: animateDismiss) {
                 self.editFinishBlock?(nil)
@@ -442,13 +448,14 @@ public class ZLEditVideoViewController: UIViewController {
     private func getStartTime() -> CMTime {
         var oneFrameDuration = interval
         if measureCount > 10 {
-
+            // 如果measureCount > 10，计算出框选区域外，每一帧图片占的时长
             oneFrameDuration = (avAsset.duration.seconds - Double(ZLPhotoConfiguration.default().maxEditVideoTime)) / Double(measureCount - 10)
         }
         
         let offsetX = collectionView.contentOffset.x
         let previousSecond = offsetX / ZLEditVideoViewController.frameImageSize.width * oneFrameDuration
-
+        
+        // 框选区域内起始时长
         let innerRect = frameImageBorderView.convert(clipRect(), from: view)
         let innerPreviousSecond: TimeInterval
         if isRTL() {

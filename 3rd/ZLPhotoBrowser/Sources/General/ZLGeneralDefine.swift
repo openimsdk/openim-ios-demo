@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLGeneralDefine.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/8/11.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import Photos
@@ -104,7 +104,11 @@ func deviceSafeAreaInsets() -> UIEdgeInsets {
 }
 
 func deviceIsFringeScreen() -> Bool {
-    return deviceSafeAreaInsets().top > 0
+    if UIApplication.shared.statusBarOrientation.isLandscape {
+        return deviceSafeAreaInsets().left > 0 || deviceSafeAreaInsets().right > 0
+    } else {
+        return deviceSafeAreaInsets().top > 20
+    }
 }
 
 func isSmallScreen() -> Bool {
@@ -238,6 +242,7 @@ func downloadAssetIfNeed(model: ZLPhotoModel, sender: UIViewController?, complet
     })
 }
 
+/// Check if the video duration and size meet the requirements
 func videoIsMeetRequirements(model: ZLPhotoModel) -> Bool {
     guard model.type == .video else {
         return true
@@ -275,11 +280,11 @@ func ZLMainAsync(after: TimeInterval = 0, handler: @escaping (() -> Void)) {
 }
 
 func zl_debugPrint(_ message: Any...) {
-
+//    message.forEach { debugPrint($0) }
 }
 
-func zlLoggerInDebug(_ lastMessage: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) {
+func zlLoggerInDebug(_ lastMessage: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line, funcName: String = #function) {
     #if DEBUG
-        print("\(file):\(line): \(lastMessage())")
+        print("file: \(file), line: \(line), func: \(funcName), message: \(lastMessage())")
     #endif
 }

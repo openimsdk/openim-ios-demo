@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLCameraConfiguration.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2021/11/10.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import AVFoundation
@@ -30,7 +30,7 @@ import AVFoundation
 @objcMembers
 public class ZLCameraConfiguration: NSObject {
     private var pri_allowTakePhoto = true
-
+    /// Allow taking photos in the camera (Need allowSelectImage to be true). Defaults to true.
     public var allowTakePhoto: Bool {
         get {
             pri_allowTakePhoto && ZLPhotoConfiguration.default().allowSelectImage
@@ -41,7 +41,7 @@ public class ZLCameraConfiguration: NSObject {
     }
     
     private var pri_allowRecordVideo = true
-
+    /// Allow recording in the camera (Need allowSelectVideo to be true). Defaults to true.
     public var allowRecordVideo: Bool {
         get {
             pri_allowRecordVideo && ZLPhotoConfiguration.default().allowSelectVideo
@@ -52,7 +52,7 @@ public class ZLCameraConfiguration: NSObject {
     }
     
     private var pri_minRecordDuration: ZLPhotoConfiguration.Second = 0
-
+    /// Minimum recording duration. Defaults to 0.
     public var minRecordDuration: ZLPhotoConfiguration.Second {
         get {
             pri_minRecordDuration
@@ -63,7 +63,7 @@ public class ZLCameraConfiguration: NSObject {
     }
     
     private var pri_maxRecordDuration: ZLPhotoConfiguration.Second = 20
-
+    /// Maximum recording duration. Defaults to 20, minimum is 1.
     public var maxRecordDuration: ZLPhotoConfiguration.Second {
         get {
             pri_maxRecordDuration
@@ -72,23 +72,63 @@ public class ZLCameraConfiguration: NSObject {
             pri_maxRecordDuration = max(1, newValue)
         }
     }
-
+    
+    /// Indicates whether the video flowing through the connection should be mirrored about its vertical axis.
+    public var isVideoMirrored = true
+    
+    /// Video resolution. Defaults to hd1920x1080.
     public var sessionPreset: ZLCameraConfiguration.CaptureSessionPreset = .hd1920x1080
-
+    
+    /// Camera focus mode. Defaults to continuousAutoFocus
     public var focusMode: ZLCameraConfiguration.FocusMode = .continuousAutoFocus
-
+    
+    /// Camera exposure mode. Defaults to continuousAutoExposure
     public var exposureMode: ZLCameraConfiguration.ExposureMode = .continuousAutoExposure
-
+    
+    /// Camera flahs switch. Defaults to true.
     public var showFlashSwitch = true
-
+    
+    /// Whether to support switch camera. Defaults to true.
     public var allowSwitchCamera = true
-
+    
+    /// Flag to enable tap-to-record functionality. Default is false.
+    /// Note: This property is prioritized lower than `allowTakePhoto`.
+    /// If `allowTakePhoto` is true, `tapToRecordVideo` will be ignored.
+    public var tapToRecordVideo: Bool = false
+    
+    private var _enableWideCameras: Bool = false
+    
+    /// Enable the use of wide cameras (e.g., .builtInTripleCamera, .builtInDualWideCamera, .builtInDualCamera).
+    /// Only available on iOS 13.0 and higher, defaults to false.
+    @available(iOS 13.0, *)
+    public var enableWideCameras: Bool {
+        get {
+            return _enableWideCameras
+        }
+        set {
+            _enableWideCameras = newValue
+        }
+    }
+    
+    /// Overlay view to be displayed on top of the camera view.
+    /// User interaction is disabled for this view.
+    public var overlayView: UIView? {
+        didSet {
+            overlayView?.isUserInteractionEnabled = false
+        }
+    }
+    
+    /// Video stabilization mode. Defaults to .off.
+    public var videoStabilizationMode: AVCaptureVideoStabilizationMode = .off
+    
+    /// Video export format for recording video and editing video. Defaults to mov.
     public var videoExportType: ZLCameraConfiguration.VideoExportType = .mov
-
+    
+    /// The default camera position after entering the camera. Defaults to back.
     public var devicePosition: ZLCameraConfiguration.DevicePosition = .back
     
     private var pri_videoCodecType: Any?
-
+    /// The codecs for video capture. Defaults to .h264
     @available(iOS 11.0, *)
     public var videoCodecType: AVVideoCodecType {
         get {
@@ -98,6 +138,9 @@ public class ZLCameraConfiguration: NSObject {
             pri_videoCodecType = newValue
         }
     }
+    
+    /// Optional lock for output orientation. If set, any video/photo output will use this orientation.
+    public var lockedOutputOrientation: AVCaptureVideoOrientation? = nil
 }
 
 public extension ZLCameraConfiguration {
@@ -181,7 +224,8 @@ public extension ZLCameraConfiguration {
     @objc enum DevicePosition: Int {
         case back
         case front
-
+        
+        /// For custom camera
         var avDevicePosition: AVCaptureDevice.Position {
             switch self {
             case .back:
@@ -190,7 +234,8 @@ public extension ZLCameraConfiguration {
                 return .front
             }
         }
-
+        
+        /// For system camera
         var cameraDevice: UIImagePickerController.CameraDevice {
             switch self {
             case .back:
@@ -202,6 +247,7 @@ public extension ZLCameraConfiguration {
     }
 }
 
+// MARK: chaining
 
 public extension ZLCameraConfiguration {
     @discardableResult
@@ -274,6 +320,37 @@ public extension ZLCameraConfiguration {
     @discardableResult
     func videoCodecType(_ type: AVVideoCodecType) -> ZLCameraConfiguration {
         videoCodecType = type
+        return self
+    }
+    
+    @discardableResult
+    func tapToRecordVideo(_ value: Bool) -> ZLCameraConfiguration {
+        tapToRecordVideo = value
+        return self
+    }
+    
+    @available(iOS 13.0, *)
+    @discardableResult
+    func enableWideCameras(_ value: Bool) -> ZLCameraConfiguration {
+        enableWideCameras = value
+        return self
+    }
+    
+    @discardableResult
+    func overlayView(_ value: UIView) -> ZLCameraConfiguration {
+        overlayView = value
+        return self
+    }
+    
+    @discardableResult
+    func videoStabilizationMode(_ value: AVCaptureVideoStabilizationMode) -> ZLCameraConfiguration {
+        videoStabilizationMode = value
+        return self
+    }
+    
+    @discardableResult
+    func lockedOutputOrientation(_ orientation: AVCaptureVideoOrientation?) -> ZLCameraConfiguration {
+        self.lockedOutputOrientation = orientation
         return self
     }
 }

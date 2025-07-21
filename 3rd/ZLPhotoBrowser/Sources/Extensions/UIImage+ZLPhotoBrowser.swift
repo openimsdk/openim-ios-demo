@@ -1,37 +1,38 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  UIImage+ZLPhotoBrowser.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/8/22.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import Accelerate
 import MobileCoreServices
 
+// MARK: data 转 gif image
 
 public extension ZLPhotoBrowserWrapper where Base: UIImage {
     static func animateGifImage(data: Data) -> UIImage? {
-
+        // Kingfisher
         let info: [String: Any] = [
             kCGImageSourceShouldCache as String: true,
             kCGImageSourceTypeIdentifierHint as String: kUTTypeGIF
@@ -60,14 +61,16 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
             guard let imageRef = CGImageSourceCreateImageAtIndex(imageSource, index, info as CFDictionary) else {
                 return nil
             }
-
+            
+            // Get current animated GIF frame duration
             let currFrameDuration = getFrameDuration(from: imageSource, at: index) * min(ratio, 3)
-
+            // Second to ms
             frameDuration.append(Int(currFrameDuration * 1000))
             
             images.append(UIImage(cgImage: imageRef, scale: 1, orientation: .up))
         }
-
+        
+        // https://github.com/kiritmodi2702/GIF-Swift
         let duration: Int = {
             var sum = 0
             for val in frameDuration {
@@ -75,13 +78,14 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
             }
             return sum
         }()
-
+        
+        // 求出每一帧的最大公约数
         let gcd = gcdForArray(frameDuration)
         var frames = [UIImage]()
 
         for i in 0..<frameCount {
             let frameImage = images[i]
-
+            // 每张图片的时长除以最大公约数，得出需要展示的张数
             let count = Int(frameDuration[i] / gcd)
 
             for _ in 0..<count {
@@ -91,7 +95,8 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
         
         return .animatedImage(with: frames, duration: TimeInterval(duration) / 1000)
     }
-
+    
+    /// Calculates frame duration at a specific index for a gif from an `imageSource`.
     static func getFrameDuration(from imageSource: CGImageSource, at index: Int) -> TimeInterval {
         guard let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, index, nil)
             as? [String: Any] else { return 0.0 }
@@ -99,7 +104,8 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
         let gifInfo = properties[kCGImagePropertyGIFDictionary as String] as? [String: Any]
         return getFrameDuration(from: gifInfo)
     }
-
+    
+    /// Calculates frame duration for a gif frame out of the kCGImagePropertyGIFDictionary dictionary.
     static func getFrameDuration(from gifInfo: [String: Any]?) -> TimeInterval {
         let defaultFrameDuration = 0.1
         guard let gifInfo = gifInfo else { return defaultFrameDuration }
@@ -151,9 +157,10 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
     }
 }
 
+// MARK: image edit
 
 public extension ZLPhotoBrowserWrapper where Base: UIImage {
-
+    /// 修复转向
     func fixOrientation() -> UIImage {
         if base.imageOrientation == .up {
             return base
@@ -212,6 +219,7 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
         return UIImage(cgImage: newCgImage)
     }
 
+    /// 旋转方向
     func rotate(orientation: UIImage.Orientation) -> UIImage {
         guard let imagRef = base.cgImage else {
             return base
@@ -303,7 +311,8 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
         
         return newImage ?? base
     }
-
+    
+    /// 加马赛克
     func mosaicImage() -> UIImage? {
         guard let cgImage = base.cgImage else {
             return nil
@@ -336,10 +345,11 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
             base.draw(in: CGRect(origin: .zero, size: size))
         }
     }
-
-
-
-
+    
+    /// Resize image. Processing speed is better than resize(:) method
+    /// - Parameters:
+    ///   - size: Dest size of the image
+    ///   - scale: The scale factor of the image
     func resize_vI(_ size: CGSize, scale: CGFloat? = nil) -> UIImage? {
         guard let cgImage = base.cgImage else { return nil }
         
@@ -375,13 +385,16 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
             destData.deallocate()
         }
         var destBuffer = vImage_Buffer(data: destData, height: vImagePixelCount(destHeight), width: vImagePixelCount(destWidth), rowBytes: destBytesPerRow)
-
+        
+        // scale the image
         error = vImageScale_ARGB8888(&sourceBuffer, &destBuffer, nil, numericCast(kvImageHighQualityResampling))
         guard error == kvImageNoError else { return nil }
-
+        
+        // create a CGImage from vImage_Buffer
         guard let destCGImage = vImageCreateCGImageFromBuffer(&destBuffer, &format, nil, nil, numericCast(kvImageNoFlags), &error)?.takeRetainedValue() else { return nil }
         guard error == kvImageNoError else { return nil }
-
+        
+        // create a UIImage
         return UIImage(cgImage: destCGImage, scale: scale ?? base.scale, orientation: base.imageOrientation)
     }
     
@@ -403,7 +416,7 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
         } else if a == -270 {
             newImage = rotate(orientation: .right)
         }
-        guard editRect.size != newImage.size else {
+        guard isCircle || editRect.size != newImage.size else {
             return newImage
         }
         
@@ -453,11 +466,11 @@ public extension ZLPhotoBrowserWrapper where Base: UIImage {
 }
 
 public extension ZLPhotoBrowserWrapper where Base: UIImage {
-
-
-
-
-
+    /// 调整图片亮度、对比度、饱和度
+    /// - Parameters:
+    ///   - brightness: value in [-1, 1]
+    ///   - contrast: value in [-1, 1]
+    ///   - saturation: value in [-1, 1]
     func adjust(brightness: Float, contrast: Float, saturation: Float) -> UIImage? {
         guard let ciImage = toCIImage() else {
             return base

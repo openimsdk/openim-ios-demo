@@ -47,7 +47,6 @@ open class PhotoHelper {
             .allowSelectLivePhoto(false)
             .allowSelectOriginal(false)
             .editImageConfiguration(editConfig)
-            .showClipDirectlyIfOnlyHasClipTool(true)
             .canSelectAsset { _ in true }
             .saveNewImageAfterEdit(false)
             .noAuthorityCallback { (authType: ZLNoAuthorityType) in

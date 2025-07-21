@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLPhotoPreviewPopInteractiveTransition.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/9/3.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 import AVFoundation
@@ -51,7 +51,7 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
     var interactive = false
     
     var currentCell: ZLPreviewBaseCell?
-
+    /// 取消动画时候，是否需要将Y值修正为0
     var needCorrectYToZeroWhenCancel = false
     
     var translationBeforeInteractive: CGPoint = .zero
@@ -92,7 +92,7 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
             let result = panResult(pan)
             imageView?.transform = CGAffineTransform(scaleX: result.scale, y: result.scale)
             imageView?.center = CGPoint(x: result.frame.midX, y: result.frame.midY)
-
+//            imageView?.frame = result.frame
             
             shadowView?.alpha = pow(result.scale, 2)
             
@@ -119,7 +119,8 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
             interactive = false
         }
     }
-
+    
+    /// 判断是否开始手势
     func canStartPan() -> Bool {
         guard !interactive else { return true }
         
@@ -136,14 +137,15 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
         if scrollView.isZooming ||
             scrollView.isZoomBouncing ||
             scrollView.contentOffset.y > 0 ||
-
+            // cell放大时候，当拖拽到最左和最右时，会拉动vc的collectionView，这时不能进行pop动画
             (convertRect.minX != 0 && contentView.zl.width > scrollView.zl.width) {
             return false
         }
         
         return true
     }
-
+    
+    /// 开始手势
     func beginInterative(_ pan: UIPanGestureRecognizer) {
         guard !interactive else { return }
         
@@ -159,16 +161,18 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
     }
     
     func panResult(_ pan: UIPanGestureRecognizer) -> (frame: CGRect, scale: CGFloat) {
-
+        // 拖动偏移量
         let translation = pan.translation(in: viewController?.view)
         let transY = translation.y - translationBeforeInteractive.y
         let currentTouch = pan.location(in: viewController?.view)
-
+        
+        // 由下拉的偏移值决定缩放比例，越往下偏移，缩得越小。scale值区间[0.3, 1.0]
         let scale = min(1.0, max(0.3, 1 - transY / UIScreen.main.bounds.height))
         
         let width = imageViewOriginalFrame.size.width * scale
         let height = imageViewOriginalFrame.size.height * scale
-
+        
+        // 计算x和y。保持手指在图片上的相对位置不变。
         let xRate = (startPanPoint.x - imageViewOriginalFrame.origin.x) / imageViewOriginalFrame.size.width
         let currentTouchDeltaX = xRate * width
         let x = currentTouch.x - currentTouchDeltaX
@@ -276,7 +280,7 @@ class ZLPhotoPreviewPopInteractiveTransition: UIPercentDrivenInteractiveTransiti
         toVC.endPopTransition()
         
         UIView.animate(withDuration: 0.3, animations: {
-            if let toFrame = toFrame, self.playerLayer == nil {
+            if let toFrame, self.playerLayer == nil {
                 self.imageView?.transform = .identity
                 self.imageView?.frame = toFrame
             } else {

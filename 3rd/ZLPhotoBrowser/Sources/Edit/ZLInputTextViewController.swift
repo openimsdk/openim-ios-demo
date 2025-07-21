@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//  ZLInputTextViewController.swift
+//  ZLPhotoBrowser
+//
+//  Created by long on 2020/10/30.
+//
+//  Copyright (c) 2020 Long Zhang <495181165@qq.com>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
@@ -37,15 +37,38 @@ class ZLInputTextViewController: UIViewController {
     
     private var currentColor: UIColor {
         didSet {
+            textView.typingAttributes = attribute
+            strokeTextView.strokeColor = currentColor
+            strokeTextView.setNeedsDisplay()
             refreshTextViewUI()
         }
     }
     
-    private var textStyle: ZLInputTextStyle
+    private var textStyle: ZLInputTextStyle {
+        didSet {
+            textView.typingAttributes = attribute
+            strokeTextView.isHidden = textStyle != .stroke
+            strokeTextView.setNeedsDisplay()
+        }
+    }
+    
+    private lazy var bgImageView: UIImageView = {
+        let view = UIImageView(image: image?.zl.blurImage(level: 4))
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
+    private lazy var coverView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.4
+        return view
+    }()
     
     private lazy var cancelBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle(localLanguageTextValue(.cancel), for: .normal)
+        btn.setTitleColor(.zl.bottomToolViewDoneBtnNormalTitleColor, for: .normal)
         btn.titleLabel?.font = ZLLayout.bottomToolTitleFont
         btn.addTarget(self, action: #selector(cancelBtnClick), for: .touchUpInside)
         return btn
@@ -63,21 +86,58 @@ class ZLInputTextViewController: UIViewController {
         return btn
     }()
     
+    private var attribute: [NSAttributedString.Key: Any] {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 2
+        var att: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .paragraphStyle: paragraphStyle
+        ]
+        var foregroundColor = currentColor
+        
+        if textStyle == .bg {
+            if currentColor == .white {
+                foregroundColor = .black
+            } else if currentColor == .black {
+                foregroundColor = .white
+            } else {
+                foregroundColor = .white
+            }
+        } else if textStyle == .shadow {
+            let shadow = NSShadow()
+            shadow.shadowColor = UIColor.black
+            shadow.shadowOffset = CGSize(width: 2, height: 2)
+            shadow.shadowBlurRadius = 3
+            att[.shadow] = shadow
+        }
+        
+        att[.foregroundColor] = foregroundColor
+        return att
+    }
+    
     private lazy var textView: UITextView = {
-        let y = max(deviceSafeAreaInsets().top, 20) + 20 + ZLLayout.bottomToolBtnH + 12
-        let textView = UITextView(frame: CGRect(x: 10, y: y, width: view.zl.width - 20, height: 200))
+        let textView = UITextView()
         textView.keyboardAppearance = .dark
         textView.returnKeyType = .done
         textView.delegate = self
         textView.backgroundColor = .clear
         textView.tintColor = .zl.bottomToolViewBtnNormalBgColor
-        textView.textColor = currentColor
-        textView.text = text
-        textView.font = font
+        textView.attributedText = NSAttributedString(string: text, attributes: attribute)
+        textView.typingAttributes = attribute
         textView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
         textView.textContainer.lineFragmentPadding = 0
         textView.layoutManager.delegate = self
         return textView
+    }()
+    
+    private lazy var strokeTextView: ZLStrokeTextView = {
+        let view = ZLStrokeTextView()
+        view.backgroundColor = .clear
+        view.font = font
+        view.strokeColor = currentColor
+        view.text = text
+        view.isHidden = textStyle != .stroke
+        return view
     }()
     
     private lazy var toolView = UIView(frame: CGRect(
@@ -114,16 +174,21 @@ class ZLInputTextViewController: UIViewController {
         return collectionView
     }()
     
+    private var shouldLayout = true
+    
     private lazy var textLayer = CAShapeLayer()
     
     private let textLayerRadius: CGFloat = 10
     
     private let maxTextCount = 100
-
+    
+    private var frameObservation: NSKeyValueObservation?
+    
+    /// text, textColor, image, style
     var endInput: ((String, UIColor, UIFont, UIImage?, ZLInputTextStyle) -> Void)?
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        deviceIsiPhone() ? .portrait : .all
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -131,6 +196,7 @@ class ZLInputTextViewController: UIViewController {
     }
     
     deinit {
+        frameObservation?.invalidate()
         zl_debugPrint("ZLInputTextViewController deinit")
     }
     
@@ -176,6 +242,22 @@ class ZLInputTextViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        guard shouldLayout else { return }
+        
+        shouldLayout = false
+        bgImageView.frame = view.bounds
+        
+        // iPad图片由竖屏切换到横屏时候填充方式会有点异常，这里重置下
+        if deviceIsiPad() {
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                bgImageView.contentMode = .scaleAspectFill
+            } else {
+                bgImageView.contentMode = .scaleAspectFit
+            }
+        }
+        
+        coverView.frame = bgImageView.bounds
+        
         let btnY = max(deviceSafeAreaInsets().top, 20)
         let cancelBtnW = localLanguageTextValue(.cancel).zl.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: .greatestFiniteMagnitude, height: ZLLayout.bottomToolBtnH)).width + 20
         cancelBtn.frame = CGRect(x: 15, y: btnY, width: cancelBtnW, height: ZLLayout.bottomToolBtnH)
@@ -186,6 +268,8 @@ class ZLInputTextViewController: UIViewController {
                 limitSize: CGSize(width: .greatestFiniteMagnitude, height: ZLLayout.bottomToolBtnH)
             ).width + 20
         doneBtn.frame = CGRect(x: view.zl.width - 20 - doneBtnW, y: btnY, width: doneBtnW, height: ZLLayout.bottomToolBtnH)
+        
+        textView.frame = CGRect(x: 10, y: doneBtn.zl.bottom + 30, width: view.zl.width - 20, height: 200)
         
         textStyleBtn.frame = CGRect(
             x: 12,
@@ -200,34 +284,57 @@ class ZLInputTextViewController: UIViewController {
             height: Self.toolViewHeight
         )
         
+        for subview in textView.subviews {
+            if NSStringFromClass(subview.classForCoder) == "_UITextContainerView" {
+                textView.insertSubview(strokeTextView, belowSubview: subview)
+                refreshStrokeTextViewFrame(for: subview)
+                
+                frameObservation?.invalidate()
+                frameObservation = subview.observe(
+                    \.frame,
+                     options: .new,
+                     changeHandler: { object, change in
+                         self.refreshStrokeTextViewFrame(for: subview)
+                     }
+                )
+                
+                break
+            }
+        }
+        
         if let index = ZLPhotoConfiguration.default().editImageConfiguration.textStickerTextColors.firstIndex(where: { $0 == self.currentColor }) {
             collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        shouldLayout = true
+    }
+    
     private func setupUI() {
         view.backgroundColor = .black
         
-        let bgImageView = UIImageView(image: image?.zl.blurImage(level: 4))
-        bgImageView.frame = view.bounds
-        bgImageView.contentMode = .scaleAspectFit
         view.addSubview(bgImageView)
-        
-        let coverView = UIView(frame: bgImageView.bounds)
-        coverView.backgroundColor = .black
-        coverView.alpha = 0.4
         bgImageView.addSubview(coverView)
-        
         view.addSubview(cancelBtn)
         view.addSubview(doneBtn)
         view.addSubview(textView)
         view.addSubview(toolView)
         toolView.addSubview(textStyleBtn)
         toolView.addSubview(collectionView)
-
+        
+        // 这个要放到这里，不能放到懒加载里，因为放到懒加载里会触发layoutManager(_:, didCompleteLayoutFor:,atEnd)，导致循环调用
         textView.textAlignment = .left
         
         refreshTextViewUI()
+    }
+    
+    private func refreshStrokeTextViewFrame(for containerView: UIView) {
+        var rect = self.textView.convert(containerView.frame, from: containerView)
+        rect = rect.insetBy(dx: textView.textContainerInset.left, dy: 0)
+        rect.origin.y += textView.textContainerInset.top + 0.5
+        self.strokeTextView.frame = rect
     }
     
     private func refreshTextViewUI() {
@@ -236,27 +343,13 @@ class ZLInputTextViewController: UIViewController {
         
         drawTextBackground()
         
-        guard textStyle == .bg else {
-            textView.textColor = currentColor
-            return
-        }
+        guard textView.text != nil else { return }
         
-        if currentColor == .white {
-            textView.textColor = .black
-        } else if currentColor == .black {
-            textView.textColor = .white
-        } else {
-            textView.textColor = .white
-        }
+        textView.attributedText = NSAttributedString(string: textView.text, attributes: attribute)
     }
     
     @objc private func textStyleBtnClick() {
-        if textStyle == .normal {
-            textStyle = .bg
-        } else {
-            textStyle = .normal
-        }
-        
+        textStyle = textStyle.next
         refreshTextViewUI()
     }
     
@@ -278,7 +371,18 @@ class ZLInputTextViewController: UIViewController {
                         if textStyle == .bg {
                             textLayer.render(in: context)
                         }
-
+                        
+                        var offsetX: CGFloat = 0
+                        var offsetY: CGFloat = 0
+                        if textStyle == .stroke {
+                            let frame = textView.convert(strokeTextView.frame, to: subview)
+                            context.translateBy(x: frame.minX, y: frame.minY)
+                            offsetX = -frame.minX
+                            offsetY = -frame.minY
+                            strokeTextView.layer.render(in: context)
+                        }
+                        
+                        context.translateBy(x: offsetX, y: offsetY)
                         subview.layer.render(in: context)
                     }
                 }
@@ -358,6 +462,7 @@ extension ZLInputTextViewController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+// MARK: Draw text layer
 
 extension ZLInputTextViewController {
     private func drawTextBackground() {
@@ -413,7 +518,8 @@ extension ZLInputTextViewController {
     
     private func calculateTextRects() -> [CGRect] {
         let layoutManager = textView.layoutManager
-
+        
+        // 这里必须用utf16.count 或者 (text as NSString).length，因为用count的话不准，一个emoji表情的count为2或更大
         let range = layoutManager.glyphRange(forCharacterRange: NSMakeRange(0, textView.text.utf16.count), actualCharacterRange: nil)
         let glyphRange = layoutManager.glyphRange(forCharacterRange: range, actualCharacterRange: nil)
         
@@ -446,7 +552,8 @@ extension ZLInputTextViewController {
         
         var preChanged = false
         var currChanged = false
-
+        
+        // 当前rect宽度大于上方的rect，但差值小于2倍圆角
         if currRect.width > preRect.width, currRect.width - preRect.width < 2 * textLayerRadius {
             var size = preRect.size
             size.width = currRect.width
@@ -475,6 +582,13 @@ extension ZLInputTextViewController {
 
 extension ZLInputTextViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        defer {
+            strokeTextView.text = textView.text
+            if textStyle == .stroke {
+                strokeTextView.setNeedsDisplay()
+            }
+        }
+        
         let markedTextRange = textView.markedTextRange
         guard markedTextRange == nil || (markedTextRange?.isEmpty ?? true) else {
             return
@@ -483,7 +597,10 @@ extension ZLInputTextViewController: UITextViewDelegate {
         let text = textView.text ?? ""
         if text.count > maxTextCount {
             let endIndex = text.index(text.startIndex, offsetBy: maxTextCount)
-            textView.text = String(text[..<endIndex])
+            textView.attributedText = NSAttributedString(
+                string: String(text[..<endIndex]),
+                attributes: attribute
+            )
         }
     }
     
@@ -492,6 +609,7 @@ extension ZLInputTextViewController: UITextViewDelegate {
             doneBtnClick()
             return false
         }
+        
         return true
     }
 }
@@ -509,6 +627,21 @@ extension ZLInputTextViewController: NSLayoutManagerDelegate {
 public enum ZLInputTextStyle {
     case normal
     case bg
+    case stroke
+    case shadow
+    
+    fileprivate var next: ZLInputTextStyle {
+        switch self {
+        case .normal:
+            return .bg
+        case .bg:
+            return .stroke
+        case .stroke:
+            return .shadow
+        case .shadow:
+            return.normal
+        }
+    }
     
     fileprivate var btnImage: UIImage? {
         switch self {
@@ -516,6 +649,56 @@ public enum ZLInputTextStyle {
             return .zl.getImage("zl_input_font")
         case .bg:
             return .zl.getImage("zl_input_font_bg")
+        case .stroke:
+            return .zl.getImage("zl_input_font_stroke")
+        case .shadow:
+            return .zl.getImage("zl_input_font_shadow")
         }
+    }
+}
+
+class ZLStrokeTextView: UIView {
+    var font: UIFont = .boldSystemFont(ofSize: ZLTextStickerView.fontSize)
+    var strokeColor: UIColor = .white
+    var strokeWidth: CGFloat = 4.0
+    var text = ""
+    
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        
+        context.clear(bounds)
+        context.saveGState()
+        context.textMatrix = .identity
+        context.translateBy(x: 0, y: bounds.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+
+        // 设置描边和填充颜色
+        var textColorARGB = strokeColor.zl.argbTuple()
+        if textColorARGB.red <= 0.1, textColorARGB.green <= 0.1, textColorARGB.blue <= 0.1 {
+            // 黑色的话修改为白色，方便看出边框
+            textColorARGB = (1, 1, 1, 1)
+        }
+        let fillColor = UIColor(red: textColorARGB.red * 0.45, green: textColorARGB.green * 0.45, blue: textColorARGB.blue * 0.5, alpha: 1)
+        
+        context.setTextDrawingMode(.fillStroke)
+        // 描边宽度
+        context.setLineWidth(strokeWidth)
+        context.setFillColor(fillColor.cgColor)
+        context.setLineJoin(.round)
+        
+        // 创建 Core Text 绘制
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 2.2
+        let attributedString = NSAttributedString(string: text, attributes: [.foregroundColor: fillColor, .font: font, .paragraphStyle: paragraphStyle])
+
+        let framesetter = CTFramesetterCreateWithAttributedString(attributedString)
+        let path = CGMutablePath()
+        
+        path.addRect(bounds)
+        let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, attributedString.length), path, nil)
+        
+        // 绘制文本
+        CTFrameDraw(frame, context)
+        context.restoreGState()
     }
 }
