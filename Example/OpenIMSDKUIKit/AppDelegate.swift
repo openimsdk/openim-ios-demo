@@ -4,8 +4,15 @@ import Localize_Swift
 import RxSwift
 import ProgressHUD
 import AlamofireNetworkActivityLogger
+
+#if !targetEnvironment(simulator)
+#if canImport(FirebaseCore)
 import FirebaseCore
+#endif
+#if canImport(FirebaseMessaging)
 import FirebaseMessaging
+#endif
+#endif
 
 let bussinessPort = ":10008"
 let bussinessRoute = "/chat"
@@ -121,7 +128,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             self?.orientation = o
         }
         
+#if !targetEnvironment(simulator)
         if pushType == .fcm {
+#if canImport(FirebaseCore) && canImport(FirebaseMessaging)
             FirebaseApp.configure()
             Messaging.messaging().delegate = self
 
@@ -134,9 +143,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             
             application.registerForRemoteNotifications()
-            
+#endif
         }
-        
+#endif
         return true
     }
     
@@ -206,7 +215,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return orientation
     }
-    
+#if !targetEnvironment(simulator) && canImport(FirebaseMessaging)
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         if pushType == .fcm {
             Messaging.messaging().apnsToken = deviceToken
@@ -229,8 +238,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             Messaging.messaging().appDidReceiveMessage(userInfo)
         }
       }
+#endif
 }
 
+#if !targetEnvironment(simulator)
 extension AppDelegate: MessagingDelegate {
     
   func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
@@ -250,3 +261,4 @@ extension AppDelegate: MessagingDelegate {
       }
   }
 }
+#endif

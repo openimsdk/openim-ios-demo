@@ -13,6 +13,7 @@
 		175875682D1D74CE00B1A24E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 175875672D1D74CE00B1A24E /* GoogleService-Info.plist */; };
 		1760BE5C2BD9FFAD0096CD1C /* SimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1760BE5B2BD9FFAD0096CD1C /* SimpleInputViewController.swift */; };
 		17620CE42A4D1E5200B74C96 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17620CE32A4D1E5200B74C96 /* String+Extension.swift */; };
+		1763B4068D5340559661328F /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E459C31ED3615CB7DE2DE9BC /* Pods_OpenIMSDKUIKit_Example.framework */; };
 		1790EE6C2921EAFC00C4024A /* BlockedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790EE5B2921EAFC00C4024A /* BlockedListViewController.swift */; };
 		1790EE6D2921EAFC00C4024A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790EE5C2921EAFC00C4024A /* SettingTableViewController.swift */; };
 		1790EE6E2921EAFC00C4024A /* CheckBoxTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790EE5D2921EAFC00C4024A /* CheckBoxTextTableViewCell.swift */; };
@@ -39,7 +40,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		AE1A126389AADC16909F676F /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FC98BA88CCF67F42041F69 /* Pods_OpenIMSDKUIKit_Example.framework */; };
 		DC0B7DF2282DFA09003896C1 /* UnderlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B7DF1282DFA09003896C1 /* UnderlineButton.swift */; };
 		DC0B7DF6282DFA85003896C1 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B7DF5282DFA85003896C1 /* DemoUI.swift */; };
 		DCE04171283E5BD30095874E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCE04173283E5BD30095874E /* Localizable.strings */; };
@@ -52,6 +52,475 @@
 			proxyType = 1;
 			remoteGlobalIDString = 170A2B3528F29C5000CA68EA;
 			remoteInfo = NotificationService;
+		};
+		17D9BE8B2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D797E9A5C5782CE845840781FA1CC81;
+			remoteInfo = Alamofire;
+		};
+		17D9BE8D2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4AF2E39AE7CBEB16BDCF1479813767A1;
+			remoteInfo = AlamofireNetworkActivityLogger;
+		};
+		17D9BE8F2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 32C4A01F04E51C9601FD73BE52DBE11B;
+			remoteInfo = ChatLayout;
+		};
+		17D9BE912F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CBEFE4F9E22AFDC6347A739BB35FF8C;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		17D9BE932F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 797B1BBC3E03CD39B8CB79D79BCFF843;
+			remoteInfo = DifferenceKit;
+		};
+		17D9BE952F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D51C3D0C53D23B97B032E3BDD4F82C82;
+			remoteInfo = Differentiator;
+		};
+		17D9BE972F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2B63D462DB7F827C4B11FD51E4F8E2D;
+			remoteInfo = FirebaseCore;
+		};
+		17D9BE992F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BB937B1C0DFFCF92F41861C2BC54DDA;
+			remoteInfo = "FirebaseCore-FirebaseCore_Privacy";
+		};
+		17D9BE9B2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 148D0F9E8C7373FEAF40D800FC5F1BAA;
+			remoteInfo = FirebaseCoreInternal;
+		};
+		17D9BE9D2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DB03FD262B678178A44272143846563;
+			remoteInfo = "FirebaseCoreInternal-FirebaseCoreInternal_Privacy";
+		};
+		17D9BE9F2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13C8C8B254851998F9289F71229B28A2;
+			remoteInfo = FirebaseInstallations;
+		};
+		17D9BEA12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47C581450CDB4A6111CB97EEE0711A8C;
+			remoteInfo = "FirebaseInstallations-FirebaseInstallations_Privacy";
+		};
+		17D9BEA32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5B654B4B042BA7DC93766943A643E42B;
+			remoteInfo = FirebaseMessaging;
+		};
+		17D9BEA52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0B6501341FD6783C6874C54AB31A9CF;
+			remoteInfo = "FirebaseMessaging-FirebaseMessaging_Privacy";
+		};
+		17D9BEA72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 856B5CD56F194FAD26EA91620B66D614;
+			remoteInfo = GoogleDataTransport;
+		};
+		17D9BEA92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F73AA961F4AEFF2B46B00AE435DF6BE3;
+			remoteInfo = "GoogleDataTransport-GoogleDataTransport_Privacy";
+		};
+		17D9BEAB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43874C6CBB50E7134FBEC24BABFE14F;
+			remoteInfo = GoogleUtilities;
+		};
+		17D9BEAD2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 44E291D18340EAC3F761346198515323;
+			remoteInfo = "GoogleUtilities-GoogleUtilities_Privacy";
+		};
+		17D9BEAF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B81513B0B3333500DFFB1B1B179FB571;
+			remoteInfo = InputBarAccessoryView;
+		};
+		17D9BEB12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07928762D9A8551470DAAD7C1E1F53A5;
+			remoteInfo = JXSegmentedView;
+		};
+		17D9BEB32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 92B0EC788EDA1B0CFA48DFFCB3DDAECD;
+			remoteInfo = "JXSegmentedView-JXSegmentedView";
+		};
+		17D9BEB52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C3F44C782D64D7EB20B61CE3844EBFAD;
+			remoteInfo = Kingfisher;
+		};
+		17D9BEB72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C298ABB78D9B05529B89D8322DB2E7B0;
+			remoteInfo = "Kingfisher-Kingfisher";
+		};
+		17D9BEB92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25BB7D389AA57F912B6D70E4FEB7FE16;
+			remoteInfo = KTVHTTPCache;
+		};
+		17D9BEBB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B35C474E1E10CFBAD1AF40831B8728D;
+			remoteInfo = Lantern;
+		};
+		17D9BEBD2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C662420911F515D5F716CD8CD2DF0120;
+			remoteInfo = LiveKitClient;
+		};
+		17D9BEBF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F56AAA039ACFCF47F7F2395B0D113301;
+			remoteInfo = "LiveKitClient-Privacy";
+		};
+		17D9BEC12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2ECF488EFD24A1B916546FB54E5E6827;
+			remoteInfo = "Localize-Swift";
+		};
+		17D9BEC32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6513E0A6CB60623515716E73996F0F5;
+			remoteInfo = Logging;
+		};
+		17D9BEC52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		17D9BEC72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2B276B0A79173A1D6E83C9B4FB9A4A57;
+			remoteInfo = MJExtension;
+		};
+		17D9BEC92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43EAAD2AB7E6B407E80E95F643F93D22;
+			remoteInfo = "MJExtension-MJExtension";
+		};
+		17D9BECB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E49D6D248DD1CEE584E6776B9164A1B2;
+			remoteInfo = MJRefresh;
+		};
+		17D9BECD2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E3097CFEFDA621E9FB0E62009FF87FC;
+			remoteInfo = "MJRefresh-MJRefresh.Privacy";
+		};
+		17D9BECF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F07899397253106B336994F817902DB9;
+			remoteInfo = MMBAlertsPickers;
+		};
+		17D9BED12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06FC5C9CF96D60C50FCD47D339C91951;
+			remoteInfo = nanopb;
+		};
+		17D9BED32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3227F3FC45681D7CEE5D1355A532398A;
+			remoteInfo = "nanopb-nanopb_Privacy";
+		};
+		17D9BED52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6CFC15839ACA2CFFE42FF0D4017A07;
+			remoteInfo = OpenIMSDK;
+		};
+		17D9BED72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C9BE54777CA54EACC32862A369BA2C36;
+			remoteInfo = OUICalling;
+		};
+		17D9BED92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13ABEBC2A4653C096589FBB9F297EC3B;
+			remoteInfo = "OUICalling-OIMUICalling";
+		};
+		17D9BEDB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BFB23AC6A35710D84066286B5CE667E;
+			remoteInfo = OUICore;
+		};
+		17D9BEDD2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B991FF88A2D5C6C540AC0F3850976564;
+			remoteInfo = "OUICore-OIMUIEmoji";
+		};
+		17D9BEDF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 860E890BBA7CD860DB5AF23773E7CEAC;
+			remoteInfo = "OUICore-OIMUIResource";
+		};
+		17D9BEE12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7AA8A6A1F0D1381B22469D545E523DB1;
+			remoteInfo = OUICoreView;
+		};
+		17D9BEE32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F2E6BCA06C83F5F0AF88F5BF6F7C4FFD;
+			remoteInfo = OUIIM;
+		};
+		17D9BEE52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D866065822E0A5289F348340A6FB0E4A;
+			remoteInfo = "Pods-OpenIMSDKUIKit_Example";
+		};
+		17D9BEE72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D3287058D2F13BD484A454154BEA62B;
+			remoteInfo = ProgressHUD;
+		};
+		17D9BEE92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 08FF64AC9DAD1B2FFAA4487035148DDE;
+			remoteInfo = "ProgressHUD-ProgressHUD";
+		};
+		17D9BEEB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3347A1AB6546F0A3977529B8F199DC41;
+			remoteInfo = PromisesObjC;
+		};
+		17D9BEED2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F238BB22C5201CE689CAF2F766AED95;
+			remoteInfo = "PromisesObjC-FBLPromises_Privacy";
+		};
+		17D9BEEF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC432FD48A5932251F1CAFBC4BF74894;
+			remoteInfo = RxCocoa;
+		};
+		17D9BEF12F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45528F89822ACD0BFE4789411E978828;
+			remoteInfo = "RxCocoa-RxCocoa_Privacy";
+		};
+		17D9BEF32F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 692F92D73EC27270EA9CC9575C3E65B6;
+			remoteInfo = RxDataSources;
+		};
+		17D9BEF52F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C7573034822F093BCAF13EC6B7B8454;
+			remoteInfo = RxGesture;
+		};
+		17D9BEF72F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 38B05587552A2C1CC56A9560B7556ADD;
+			remoteInfo = RxKeyboard;
+		};
+		17D9BEF92F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF8B264DFE802855D5D67E7CDDABFC3C;
+			remoteInfo = RxRelay;
+		};
+		17D9BEFB2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B06FE4EB869890001614655A886414E;
+			remoteInfo = "RxRelay-RxRelay_Privacy";
+		};
+		17D9BEFD2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 809C5FAB588354C9BA37DC3EAB8CB45C;
+			remoteInfo = RxSwift;
+		};
+		17D9BEFF2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 420D86B6DE49D1E1898C3A498E4F4195;
+			remoteInfo = "RxSwift-RxSwift_Privacy";
+		};
+		17D9BF012F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1E8CD888FB3240E19BB717B0857C0CD;
+			remoteInfo = SGCodeTextField;
+		};
+		17D9BF032F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 979486118B3E90C08386079D57962701;
+			remoteInfo = SnapKit;
+		};
+		17D9BF052F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 943D347E61A2E181A4FA2CA894307B6E;
+			remoteInfo = SwiftProtobuf;
+		};
+		17D9BF072F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 38DFD12C0DE83AD51C78858605BBA299;
+			remoteInfo = "SwiftProtobuf-SwiftProtobuf";
+		};
+		17D9BF092F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 71762A728913EB440C97D3616D291AF3;
+			remoteInfo = YYText;
+		};
+		17D9BF0B2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED363DD89BB17FB9F31F94524BA59CBB;
+			remoteInfo = ZFPlayer;
+		};
+		17D9BF0D2F5EC72A0050C4C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BB28130B0F4C47DC99D2DB9C80F70152;
+			remoteInfo = ZLPhotoBrowser;
+		};
+		F14A7A3B2E00000200A1B2C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135D159336308BA719E87EBC4C64AD76;
+			remoteInfo = "Pods-OpenIMSDKUIKit_Example";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,15 +571,13 @@
 		17E8E3442CC5F6220016CDD4 /* InputCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCodeViewController.swift; sourceTree = "<group>"; };
 		17E8E3452CC5F6220016CDD4 /* InputPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		17E8E3462CC5F6220016CDD4 /* InputAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAccountViewController.swift; sourceTree = "<group>"; };
-		3D531666E7474951CB7BD675 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* N-DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "N-DEMO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		746E016D61C05311FCE6CA23 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A8FC98BA88CCF67F42041F69 /* Pods_OpenIMSDKUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenIMSDKUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A86C2026AE51E9A37D63543 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DC05D4CF283E153400CC3974 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC05D4D0283E156300CC3974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		DC05D4D1283E156300CC3974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -121,7 +588,10 @@
 		DCD9C9762849145C00487806 /* OpenIMSDKUIKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenIMSDKUIKit_Example.entitlements; sourceTree = "<group>"; };
 		DCE04172283E5BD30095874E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DCE04174283E5BD70095874E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E08D1A5081262BC1CAAC6509 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E459C31ED3615CB7DE2DE9BC /* Pods_OpenIMSDKUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenIMSDKUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED869B95C353B3B8D5FE5BE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +606,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE1A126389AADC16909F676F /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */,
+				1763B4068D5340559661328F /* Pods_OpenIMSDKUIKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +680,79 @@
 			path = NavigationControllerPopGesture;
 			sourceTree = "<group>";
 		};
+		17D9BE422F5EC72A0050C4C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17D9BE8C2F5EC72A0050C4C1 /* Alamofire.framework */,
+				17D9BE8E2F5EC72A0050C4C1 /* AlamofireNetworkActivityLogger.framework */,
+				17D9BE902F5EC72A0050C4C1 /* ChatLayout.framework */,
+				17D9BE922F5EC72A0050C4C1 /* CocoaAsyncSocket.framework */,
+				17D9BE942F5EC72A0050C4C1 /* DifferenceKit.framework */,
+				17D9BE962F5EC72A0050C4C1 /* Differentiator.framework */,
+				17D9BE982F5EC72A0050C4C1 /* FirebaseCore.framework */,
+				17D9BE9A2F5EC72A0050C4C1 /* FirebaseCore_Privacy.bundle */,
+				17D9BE9C2F5EC72A0050C4C1 /* FirebaseCoreInternal.framework */,
+				17D9BE9E2F5EC72A0050C4C1 /* FirebaseCoreInternal_Privacy.bundle */,
+				17D9BEA02F5EC72A0050C4C1 /* FirebaseInstallations.framework */,
+				17D9BEA22F5EC72A0050C4C1 /* FirebaseInstallations_Privacy.bundle */,
+				17D9BEA42F5EC72A0050C4C1 /* FirebaseMessaging.framework */,
+				17D9BEA62F5EC72A0050C4C1 /* FirebaseMessaging_Privacy.bundle */,
+				17D9BEA82F5EC72A0050C4C1 /* GoogleDataTransport.framework */,
+				17D9BEAA2F5EC72A0050C4C1 /* GoogleDataTransport_Privacy.bundle */,
+				17D9BEAC2F5EC72A0050C4C1 /* GoogleUtilities.framework */,
+				17D9BEAE2F5EC72A0050C4C1 /* GoogleUtilities_Privacy.bundle */,
+				17D9BEB02F5EC72A0050C4C1 /* InputBarAccessoryView.framework */,
+				17D9BEB22F5EC72A0050C4C1 /* JXSegmentedView.framework */,
+				17D9BEB42F5EC72A0050C4C1 /* JXSegmentedView.bundle */,
+				17D9BEB62F5EC72A0050C4C1 /* Kingfisher.framework */,
+				17D9BEB82F5EC72A0050C4C1 /* Kingfisher.bundle */,
+				17D9BEBA2F5EC72A0050C4C1 /* KTVHTTPCache.framework */,
+				17D9BEBC2F5EC72A0050C4C1 /* Lantern.framework */,
+				17D9BEBE2F5EC72A0050C4C1 /* LiveKitClient.framework */,
+				17D9BEC02F5EC72A0050C4C1 /* Privacy.bundle */,
+				17D9BEC22F5EC72A0050C4C1 /* Localize_Swift.framework */,
+				17D9BEC42F5EC72A0050C4C1 /* Logging.framework */,
+				17D9BEC62F5EC72A0050C4C1 /* Lottie.framework */,
+				17D9BEC82F5EC72A0050C4C1 /* MJExtension.framework */,
+				17D9BECA2F5EC72A0050C4C1 /* MJExtension.bundle */,
+				17D9BECC2F5EC72A0050C4C1 /* MJRefresh.framework */,
+				17D9BECE2F5EC72A0050C4C1 /* MJRefresh.Privacy.bundle */,
+				17D9BED02F5EC72A0050C4C1 /* MMBAlertsPickers.framework */,
+				17D9BED22F5EC72A0050C4C1 /* nanopb.framework */,
+				17D9BED42F5EC72A0050C4C1 /* nanopb_Privacy.bundle */,
+				17D9BED62F5EC72A0050C4C1 /* OpenIMSDK.framework */,
+				17D9BED82F5EC72A0050C4C1 /* OUICalling.framework */,
+				17D9BEDA2F5EC72A0050C4C1 /* OIMUICalling.bundle */,
+				17D9BEDC2F5EC72A0050C4C1 /* OUICore.framework */,
+				17D9BEDE2F5EC72A0050C4C1 /* OIMUIEmoji.bundle */,
+				17D9BEE02F5EC72A0050C4C1 /* OIMUIResource.bundle */,
+				17D9BEE22F5EC72A0050C4C1 /* OUICoreView.framework */,
+				17D9BEE42F5EC72A0050C4C1 /* OUIIM.framework */,
+				17D9BEE62F5EC72A0050C4C1 /* Pods_OpenIMSDKUIKit_Example.framework */,
+				17D9BEE82F5EC72A0050C4C1 /* ProgressHUD.framework */,
+				17D9BEEA2F5EC72A0050C4C1 /* ProgressHUD.bundle */,
+				17D9BEEC2F5EC72A0050C4C1 /* FBLPromises.framework */,
+				17D9BEEE2F5EC72A0050C4C1 /* FBLPromises_Privacy.bundle */,
+				17D9BEF02F5EC72A0050C4C1 /* RxCocoa.framework */,
+				17D9BEF22F5EC72A0050C4C1 /* RxCocoa_Privacy.bundle */,
+				17D9BEF42F5EC72A0050C4C1 /* RxDataSources.framework */,
+				17D9BEF62F5EC72A0050C4C1 /* RxGesture.framework */,
+				17D9BEF82F5EC72A0050C4C1 /* RxKeyboard.framework */,
+				17D9BEFA2F5EC72A0050C4C1 /* RxRelay.framework */,
+				17D9BEFC2F5EC72A0050C4C1 /* RxRelay_Privacy.bundle */,
+				17D9BEFE2F5EC72A0050C4C1 /* RxSwift.framework */,
+				17D9BF002F5EC72A0050C4C1 /* RxSwift_Privacy.bundle */,
+				17D9BF022F5EC72A0050C4C1 /* SGCodeTextField.framework */,
+				17D9BF042F5EC72A0050C4C1 /* SnapKit.framework */,
+				17D9BF062F5EC72A0050C4C1 /* SwiftProtobuf.framework */,
+				17D9BF082F5EC72A0050C4C1 /* SwiftProtobuf.bundle */,
+				17D9BF0A2F5EC72A0050C4C1 /* YYText.framework */,
+				17D9BF0C2F5EC72A0050C4C1 /* ZFPlayer.framework */,
+				17D9BF0E2F5EC72A0050C4C1 /* ZLPhotoBrowser.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +816,7 @@
 				175D46672B307ABD006DE918 /* libresolv.tbd */,
 				DC1FAF0F27FF04D000B529B9 /* OpenIMSDKUIKit.framework */,
 				17B485F529C082CA002571B8 /* ReplayKit.framework */,
-				A8FC98BA88CCF67F42041F69 /* Pods_OpenIMSDKUIKit_Example.framework */,
+				E459C31ED3615CB7DE2DE9BC /* Pods_OpenIMSDKUIKit_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -281,8 +824,9 @@
 		CAC64E6711B5A6903B4FCC8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				746E016D61C05311FCE6CA23 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */,
-				3D531666E7474951CB7BD675 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */,
+				F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */,
+				E08D1A5081262BC1CAAC6509 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */,
+				8A86C2026AE51E9A37D63543 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -350,19 +894,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OpenIMSDKUIKit_Example" */;
 			buildPhases = (
-				2AD525725274770B4352D8EC /* [CP] Check Pods Manifest.lock */,
+				1664E056E7018930752818D5 /* [CP] Check Pods Manifest.lock */,
 				DCBD4C0227F07EE7003AFE6A /* Run Lint */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				170A2B3E28F29C5000CA68EA /* Embed App Extensions */,
-				D182438A6DCD6CC395B4AAF8 /* [CP] Embed Pods Frameworks */,
-				B098355AF7957C5640DEB27F /* [CP] Copy Pods Resources */,
+				07F07D3B3ECDE77126BB5881 /* [CP] Embed Pods Frameworks */,
+				17A0DA991E8D6680A2776E21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				170A2B3C28F29C5000CA68EA /* PBXTargetDependency */,
+				F14A7A3D2E00000400A1B2C3 /* PBXTargetDependency */,
 			);
 			name = OpenIMSDKUIKit_Example;
 			productName = OpenIMSDKUIKit;
@@ -405,6 +950,12 @@
 			mainGroup = 607FACC71AFB9204008FA782;
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 17D9BE422F5EC72A0050C4C1 /* Products */;
+					ProjectRef = F14A7A3C2E00000300A1B2C3 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* OpenIMSDKUIKit_Example */,
@@ -412,6 +963,471 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		17D9BE8C2F5EC72A0050C4C1 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 17D9BE8B2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE8E2F5EC72A0050C4C1 /* AlamofireNetworkActivityLogger.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireNetworkActivityLogger.framework;
+			remoteRef = 17D9BE8D2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE902F5EC72A0050C4C1 /* ChatLayout.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChatLayout.framework;
+			remoteRef = 17D9BE8F2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE922F5EC72A0050C4C1 /* CocoaAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaAsyncSocket.framework;
+			remoteRef = 17D9BE912F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE942F5EC72A0050C4C1 /* DifferenceKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DifferenceKit.framework;
+			remoteRef = 17D9BE932F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE962F5EC72A0050C4C1 /* Differentiator.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Differentiator.framework;
+			remoteRef = 17D9BE952F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE982F5EC72A0050C4C1 /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 17D9BE972F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE9A2F5EC72A0050C4C1 /* FirebaseCore_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FirebaseCore_Privacy.bundle;
+			remoteRef = 17D9BE992F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE9C2F5EC72A0050C4C1 /* FirebaseCoreInternal.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCoreInternal.framework;
+			remoteRef = 17D9BE9B2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BE9E2F5EC72A0050C4C1 /* FirebaseCoreInternal_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FirebaseCoreInternal_Privacy.bundle;
+			remoteRef = 17D9BE9D2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEA02F5EC72A0050C4C1 /* FirebaseInstallations.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstallations.framework;
+			remoteRef = 17D9BE9F2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEA22F5EC72A0050C4C1 /* FirebaseInstallations_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FirebaseInstallations_Privacy.bundle;
+			remoteRef = 17D9BEA12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEA42F5EC72A0050C4C1 /* FirebaseMessaging.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseMessaging.framework;
+			remoteRef = 17D9BEA32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEA62F5EC72A0050C4C1 /* FirebaseMessaging_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FirebaseMessaging_Privacy.bundle;
+			remoteRef = 17D9BEA52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEA82F5EC72A0050C4C1 /* GoogleDataTransport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransport.framework;
+			remoteRef = 17D9BEA72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEAA2F5EC72A0050C4C1 /* GoogleDataTransport_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GoogleDataTransport_Privacy.bundle;
+			remoteRef = 17D9BEA92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEAC2F5EC72A0050C4C1 /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 17D9BEAB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEAE2F5EC72A0050C4C1 /* GoogleUtilities_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GoogleUtilities_Privacy.bundle;
+			remoteRef = 17D9BEAD2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEB02F5EC72A0050C4C1 /* InputBarAccessoryView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = InputBarAccessoryView.framework;
+			remoteRef = 17D9BEAF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEB22F5EC72A0050C4C1 /* JXSegmentedView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JXSegmentedView.framework;
+			remoteRef = 17D9BEB12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEB42F5EC72A0050C4C1 /* JXSegmentedView.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JXSegmentedView.bundle;
+			remoteRef = 17D9BEB32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEB62F5EC72A0050C4C1 /* Kingfisher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Kingfisher.framework;
+			remoteRef = 17D9BEB52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEB82F5EC72A0050C4C1 /* Kingfisher.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Kingfisher.bundle;
+			remoteRef = 17D9BEB72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEBA2F5EC72A0050C4C1 /* KTVHTTPCache.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KTVHTTPCache.framework;
+			remoteRef = 17D9BEB92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEBC2F5EC72A0050C4C1 /* Lantern.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lantern.framework;
+			remoteRef = 17D9BEBB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEBE2F5EC72A0050C4C1 /* LiveKitClient.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LiveKitClient.framework;
+			remoteRef = 17D9BEBD2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEC02F5EC72A0050C4C1 /* Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Privacy.bundle;
+			remoteRef = 17D9BEBF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEC22F5EC72A0050C4C1 /* Localize_Swift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Localize_Swift.framework;
+			remoteRef = 17D9BEC12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEC42F5EC72A0050C4C1 /* Logging.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Logging.framework;
+			remoteRef = 17D9BEC32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEC62F5EC72A0050C4C1 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 17D9BEC52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEC82F5EC72A0050C4C1 /* MJExtension.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MJExtension.framework;
+			remoteRef = 17D9BEC72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BECA2F5EC72A0050C4C1 /* MJExtension.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MJExtension.bundle;
+			remoteRef = 17D9BEC92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BECC2F5EC72A0050C4C1 /* MJRefresh.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MJRefresh.framework;
+			remoteRef = 17D9BECB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BECE2F5EC72A0050C4C1 /* MJRefresh.Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MJRefresh.Privacy.bundle;
+			remoteRef = 17D9BECD2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BED02F5EC72A0050C4C1 /* MMBAlertsPickers.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MMBAlertsPickers.framework;
+			remoteRef = 17D9BECF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BED22F5EC72A0050C4C1 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 17D9BED12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BED42F5EC72A0050C4C1 /* nanopb_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = nanopb_Privacy.bundle;
+			remoteRef = 17D9BED32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BED62F5EC72A0050C4C1 /* OpenIMSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OpenIMSDK.framework;
+			remoteRef = 17D9BED52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BED82F5EC72A0050C4C1 /* OUICalling.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OUICalling.framework;
+			remoteRef = 17D9BED72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEDA2F5EC72A0050C4C1 /* OIMUICalling.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OIMUICalling.bundle;
+			remoteRef = 17D9BED92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEDC2F5EC72A0050C4C1 /* OUICore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OUICore.framework;
+			remoteRef = 17D9BEDB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEDE2F5EC72A0050C4C1 /* OIMUIEmoji.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OIMUIEmoji.bundle;
+			remoteRef = 17D9BEDD2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEE02F5EC72A0050C4C1 /* OIMUIResource.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OIMUIResource.bundle;
+			remoteRef = 17D9BEDF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEE22F5EC72A0050C4C1 /* OUICoreView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OUICoreView.framework;
+			remoteRef = 17D9BEE12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEE42F5EC72A0050C4C1 /* OUIIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OUIIM.framework;
+			remoteRef = 17D9BEE32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEE62F5EC72A0050C4C1 /* Pods_OpenIMSDKUIKit_Example.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_OpenIMSDKUIKit_Example.framework;
+			remoteRef = 17D9BEE52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEE82F5EC72A0050C4C1 /* ProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ProgressHUD.framework;
+			remoteRef = 17D9BEE72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEEA2F5EC72A0050C4C1 /* ProgressHUD.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ProgressHUD.bundle;
+			remoteRef = 17D9BEE92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEEC2F5EC72A0050C4C1 /* FBLPromises.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBLPromises.framework;
+			remoteRef = 17D9BEEB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEEE2F5EC72A0050C4C1 /* FBLPromises_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FBLPromises_Privacy.bundle;
+			remoteRef = 17D9BEED2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEF02F5EC72A0050C4C1 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = 17D9BEEF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEF22F5EC72A0050C4C1 /* RxCocoa_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RxCocoa_Privacy.bundle;
+			remoteRef = 17D9BEF12F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEF42F5EC72A0050C4C1 /* RxDataSources.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxDataSources.framework;
+			remoteRef = 17D9BEF32F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEF62F5EC72A0050C4C1 /* RxGesture.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxGesture.framework;
+			remoteRef = 17D9BEF52F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEF82F5EC72A0050C4C1 /* RxKeyboard.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxKeyboard.framework;
+			remoteRef = 17D9BEF72F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEFA2F5EC72A0050C4C1 /* RxRelay.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxRelay.framework;
+			remoteRef = 17D9BEF92F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEFC2F5EC72A0050C4C1 /* RxRelay_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RxRelay_Privacy.bundle;
+			remoteRef = 17D9BEFB2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BEFE2F5EC72A0050C4C1 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 17D9BEFD2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF002F5EC72A0050C4C1 /* RxSwift_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RxSwift_Privacy.bundle;
+			remoteRef = 17D9BEFF2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF022F5EC72A0050C4C1 /* SGCodeTextField.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SGCodeTextField.framework;
+			remoteRef = 17D9BF012F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF042F5EC72A0050C4C1 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 17D9BF032F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF062F5EC72A0050C4C1 /* SwiftProtobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftProtobuf.framework;
+			remoteRef = 17D9BF052F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF082F5EC72A0050C4C1 /* SwiftProtobuf.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftProtobuf.bundle;
+			remoteRef = 17D9BF072F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF0A2F5EC72A0050C4C1 /* YYText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YYText.framework;
+			remoteRef = 17D9BF092F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF0C2F5EC72A0050C4C1 /* ZFPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZFPlayer.framework;
+			remoteRef = 17D9BF0B2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D9BF0E2F5EC72A0050C4C1 /* ZLPhotoBrowser.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZLPhotoBrowser.framework;
+			remoteRef = 17D9BF0D2F5EC72A0050C4C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		170A2B3428F29C5000CA68EA /* Resources */ = {
@@ -436,53 +1452,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AD525725274770B4352D8EC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OpenIMSDKUIKit_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B098355AF7957C5640DEB27F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICalling/OIMUICalling.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIResource.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIEmoji.bundle",
-				"${PODS_ROOT}/../../3rd/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUICalling.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIEmoji.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D182438A6DCD6CC395B4AAF8 /* [CP] Embed Pods Frameworks */ = {
+		07F07D3B3ECDE77126BB5881 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,6 +1546,52 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1664E056E7018930752818D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenIMSDKUIKit_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17A0DA991E8D6680A2776E21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICalling/OIMUICalling.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIResource.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OUICore/OIMUIEmoji.bundle",
+				"${PODS_ROOT}/../../3rd/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUICalling.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OIMUIEmoji.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenIMSDKUIKit_Example/Pods-OpenIMSDKUIKit_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DCBD4C0227F07EE7003AFE6A /* Run Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,6 +1663,11 @@
 			isa = PBXTargetDependency;
 			target = 170A2B3528F29C5000CA68EA /* NotificationService */;
 			targetProxy = 170A2B3B28F29C5000CA68EA /* PBXContainerItemProxy */;
+		};
+		F14A7A3D2E00000400A1B2C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-OpenIMSDKUIKit_Example";
+			targetProxy = F14A7A3B2E00000200A1B2C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -862,7 +1883,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 746E016D61C05311FCE6CA23 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */;
+			baseConfigurationReference = E08D1A5081262BC1CAAC6509 /* Pods-OpenIMSDKUIKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -902,7 +1923,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D531666E7474951CB7BD675 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */;
+			baseConfigurationReference = 8A86C2026AE51E9A37D63543 /* Pods-OpenIMSDKUIKit_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
